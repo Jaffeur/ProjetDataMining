@@ -10,43 +10,50 @@ def getSoupFromUrl(url):
     result = requests.get(url)
     if result.status_code == 200:
         print 'Request successful'
-        return BeautifulSoup(result.text)
+        return BeautifulSoup(result.text, "html.parser")
     else:
         print 'Request failed', url
         return None
 
-def get_monop_rayons_1():
-    R = getSoupFromUrl('http://courses.monoprix.fr/magasin-en-ligne/courses-en-ligne.html')
-    R_a = R.find_all("ul", class_="SideNav")[0].find_all("a")
-    R_b = [r.get('href') for r in R_a]
-    rayons_1 = []
-    for r in R_b:
-        rayons_1.append(r.split(";")[0])
-    return rayons_1
-
-# ALIM & BOISSONS etc:
-def get_monop_rayons_1_1(sous_rayon):
-    R = getSoupFromUrl('http://courses.monoprix.fr/' + sous_rayon)
-    R.find_all(href=re.compile("RIDB"))
-
-######################################################################
-rayons_1 = get_monop_rayons_1()
-
-# boucle for ?? rayon[0] à rayon[4]...
-
-# ALIM & BOISSONS -> []:
-sous_rayon_alim = rayons_1[0]     # /RIDA/Alimentation-Boissons-6543255
-rayons_1_1 = get_monop_rayons_1_1(sous_rayon_alim)
+# rayons 1 : RIDA
+url0 = 'http://courses.monoprix.fr/magasin-en-ligne/courses-en-ligne.html'
+R = getSoupFromUrl(url0)
+R_a = R.find_all("ul", class_="SideNav")[0].find_all("a")
+R_b = [r.get('href') for r in R_a]
+rayons_1 = []
+for r in R_b:
+    rayons_1.append(r.split(";")[0])
 
 
+# rayons 2 : RIDB
+url1 = 'http://courses.monoprix.fr/RIDB/Alimentation-bebe-6543256'
+R = getSoupFromUrl(url1)
+R_a = R.find_all(href = re.compile('RIDB'))
+rayons_2 = [r.get('href').split(";")[0] for r in R_a]
 
+# rayons 3 : RIDC
+rayons_3 = []
+for i in range(len(rayons_2)):
+    url2 = 'http://courses.monoprix.fr/' + rayons_2[i]
+    R = getSoupFromUrl(url2)
+    R_a = R.find_all(href = re.compile('RIDC'))
+    rayons_3.extend([r.get('href').split(";")[0] for r in R_a])
 
-R.find_all(href=re.compile("RIDB"))
+# rayons 4 : RIDC
+rayons_4 = []
+for i in range(len(rayons_3)):
+    url3 = 'http://courses.monoprix.fr/' + rayons_3[i]
+    R = getSoupFromUrl(url3)
+    R_a = R.find_all(href = re.compile('RIDD'))
+    rayons_4.extend([r.get('href').split(";")[0] for r in R_a])
 
-for sibling in R.a.next_siblings:
-    print(repr(sibling))
+# rayons 5 : RIDE
+rayons_5 = []
+for i in range(len(rayons_4)):
+    url4 = 'http://courses.monoprix.fr/' + rayons_4[i]
+    R = getSoupFromUrl(url4)
+    R_a = R.find_all(href = re.compile('RIDE'))
+    rayons_5.extend([r.get('href').split(";")[0] for r in R_a])
 
-
-
-
-
+print "***************** PRODUITS *********************"
+print rayons_5
