@@ -59,7 +59,6 @@ for i in range(len(rayons_4)):
 
 url = 'http://courses.monoprix.fr'
 with open("FINAL_Produits.txt", "a") as f_w:
-
     for line in open('Monop_Prods_Tests.txt'):
         line.rstrip()
         R = getSoupFromUrl(url + line)
