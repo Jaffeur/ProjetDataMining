@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+## Gets list of product's url
 
 import requests
 import re
