@@ -3,7 +3,8 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-
+import json
+import html5lib
 
 def getRayonA(url):
 	rayonA=[]
@@ -70,25 +71,10 @@ def getInfo(productLink):
 #print c[0]
 url='http://www.houra.fr/btk/layer_article.php?id_article=1127494&id_origine=1446360&origine=TO_NOEUD'
 r=requests.get(url)
-soup=BeautifulSoup(r.text,'html.parser')
-balises_div=soup.find_all("div",id='colorbox')
-print balises_div
-
-#url="http://www.houra.fr/catalogue/?id_article=1336824"
-#print getInfo(url)
+soup=BeautifulSoup(r.text,"html5lib")
+#print soup.prettify()
+sleep 
+print soup.find("span",{"class":"art_marque"})
 
 
-
-
-
-
-
-
-
-
-#rayonsB=[]
-#rayonsA=getRayonA(url)
-#for rayonA in rayonsA:
-#	rayonsB.append(getRayonB(rayonA))
-#print rayonsB[0][0]
 
