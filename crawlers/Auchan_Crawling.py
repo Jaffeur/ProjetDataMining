@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from ghost import Ghost
 import requests, re, csv, sys
 import pandas as pd
+import numpy as np
 from slugify import slugify
 from selenium import webdriver
 from collections import OrderedDict
@@ -19,6 +20,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Product:
 
+	file = None
+
 	keys = ["enseigne","url","nom_produit",
 		"marque","quantite","poid_volume",
 		"poid_volume_total","unite","descriptif",
@@ -26,12 +29,12 @@ class Product:
 		"origine","prix","prix_unitaire"
 		]
 	#permet de garder les cléf dans l'odre
-	infos = OrderedDict.fromkeys(keys, None)
+	infos = OrderedDict.fromkeys(keys, np.nan)
 
-
-	def __init__(self, enseigne, link):
+	def __init__(self, enseigne, link, file):
 		self.infos['enseigne'] = enseigne
 		self.infos['url'] = link
+		self.file = file
 
 	def set_info(self, elem, value):
 		self.infos[elem] = value
@@ -40,16 +43,20 @@ class Product:
 		sys.stdout.write('.')
 		line = pd.Series([value for key, value in self.infos.iteritems()])
 		data_frame = pd.DataFrame(line).transpose()
-		with open('references_auchan.csv', 'a') as csvfile:
-			data_frame.to_csv(csvfile, encoding='utf-8', header=False)
+		with open(self.file, 'a') as csvfile:
+			data_frame.to_csv(csvfile, encoding='utf-8', header=False, sep = "|")
+
 
 
 ################################################################
 #		Recherche des infos
 ################################################################
 
+
+
 def record_product_infos(rayon_a, rayon_b, rayon_c, url):
-	product = Product("Auchan",url)
+	file = "references_auchan.csv"
+	product = Product("Auchan",url, file)
 	#print url
 	r = requests.get(url)
 	if r.status_code ==200:
