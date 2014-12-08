@@ -29,9 +29,10 @@ result = result.fillna(0)
 
 
 # file to write url that did'nt work properly
-with open("FINAL_Produits_Problem_3.txt", "a") as f_w_pb:
+with open("Produits_Problem_5.txt", "a") as f_w_pb:
     # file with urls to scrap
-    for line in open('FINAL_Produits_Problem_2.txt', 'r'):
+    n = 0
+    for line in open('Produits_Problem_4.txt', 'r'):
 
         res = pd.DataFrame(columns=["enseigne", "url", "nom_produit", "marque", "quantite", "poids_volume", "poids_volume_total", "unite", "descriptif", "ingredients", "conservation","valeur_energetique", "origine", "prix", "prix_au_poids"])
 
@@ -157,6 +158,8 @@ with open("FINAL_Produits_Problem_3.txt", "a") as f_w_pb:
 
             # add elements to dataframe
             result = pd.concat([result, res], ignore_index=True, verify_integrity=True)
+            print "ligne : " + str(n)
+            n += 1
 f_w_pb.close()
 
-result.to_csv("FINAL_produits_info_3.csv", sep='|', encoding="utf-8", header=True, columns=["enseigne", "url", "nom_produit", "marque", "quantite", "poids_volume", "poids_volume_total", "unite", "descriptif", "ingredients", "conservation","valeur_energetique", "origine", "prix", "prix_au_poids"])
+result.to_csv("Produits_infos_5.csv", sep='|', encoding="utf-8", header=True, columns=["enseigne", "url", "nom_produit", "marque", "quantite", "poids_volume", "poids_volume_total", "unite", "descriptif", "ingredients", "conservation","valeur_energetique", "origine", "prix", "prix_au_poids"])
