@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
+import mechanize
 from ghost import Ghost
 import requests, re, csv, sys
 import pandas as pd
@@ -13,6 +14,23 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+from PyQt4.QtWebKit import *
+
+
+class Render(QWebPage):
+	def __init__(self, url):
+		self.app = QApplication(sys.argv)
+		QWebPage.__init__(self)
+		self.loadFinished.connect(self._loadFinished)
+		self.mainFrame().load(QUrl(url))
+		self.app.exec_()
+
+	def _loadFinished(self, result):
+		self.frame = self.mainFrame()
+		self.app.quit()
+
 
 ################################################################
 #		Classe de produit
@@ -54,11 +72,12 @@ class Product:
 ################################################################
 #		Recherche des infos
 ################################################################
-
-
+file_csv = "references_auchan_suite.csv"
+rayon_a_list = ['bio-ecolo','hygiene-beaute','entretien', 'animaux-maison']
 
 def record_product_infos(rayon_a, rayon_b, rayon_c, url):
-	file = "references_auchan.csv"
+
+
 	product = Product("Auchan",url, file)
 	#print url
 	r = requests.get(url)
@@ -125,25 +144,27 @@ def get_products(rayon_a, rayon_b, rayon_c, url, url_c):
 		print "Pas d'accès à l'url " , url+url_c
 
 def get_rayons_c(rayon_a, rayon_b, url, url_b):
-	print "\n\t", rayon_b
-	r = requests.get(url + url_b)
-	if r.status_code == 200:
-		soup = BeautifulSoup(r.text, "html.parser")
-		balise_bloc = soup.find("div", {'class':"bloc_5_prd"})
-		balises_prod = balise_bloc.find_all("div", {"class":"bloc_prd"})
-		for prod in balises_prod:
-			a = prod.find("h2").find("a")
-			link = a.get('href')
-			rayon_c = a.getText()
-			get_products(rayon_a, rayon_b, rayon_c, url, link )
-	else:
-		print "Pas d'accès à l'url " , url+url_b
+    if rayon_a in rayon_a_list:
+    	print "\n\t", rayon_b
+    	r = requests.get(url + url_b)
+    	if r.status_code == 200:
+    		soup = BeautifulSoup(r.text, "html.parser")
+    		balise_bloc = soup.find("div", {'class':"bloc_5_prd"})
+    		balises_prod = balise_bloc.find_all("div", {"class":"bloc_prd"})
+    		for prod in balises_prod:
+    			a = prod.find("h2").find("a")
+    			link = a.get('href')
+    			rayon_c = a.getText()
+    			get_products(rayon_a, rayon_b, rayon_c, url, link )
+    	else:
+    		print "Pas d'accès à l'url " , url+url_b
 
 def get_rayons_b(nom, url, url_b):
 	print "\n",nom
 	r = requests.get(url+url_b)
 	if r.status_code == 200:
 		soup = BeautifulSoup(r.text, "html.parser")
+		print soup
 		balise_top_content = soup.find("div", {"class":"top-content float-container"})
 		balise_menu = balise_top_content.find("div", {"class":"menu-listes"}).find("ul", {"class":"menu menu-horizontal"})
 		balises_rayons_b = balise_menu.findChildren()
@@ -156,8 +177,7 @@ def get_rayons_b(nom, url, url_b):
 		print "Pas d'accès à l'url " , url
 
 
-def get_rayons_a(url):
-
+def get_rayons_a(soup):
 	r = requests.get(url)
 	if r.status_code == 200:
 		soup = BeautifulSoup(r.text, "html.parser")
@@ -175,25 +195,31 @@ def main():
 	"poid_volume","poid_volume_total","unite","descriptif","ingredients",
 	"conservation","valeur_energetique","origine","prix","prix_unitaire"])
 	data_frame = pd.DataFrame(line).transpose()
-	data_frame.to_csv('references_auchan.csv', encoding='utf-8', sep='|', header= False)
+	data_frame.to_csv(file_csv, encoding='utf-8', sep='|', header= False)
 
 	url = "http://www.auchandirect.fr"
 
-	"""browser = webdriver.Firefox()
-	browser.get(url)
+	"""br = mechanize.Browser()
+	br.set_handle_robots(False)   # ignore robots
+	br.set_handle_refresh(False)
+	response = br.open(url)
+	print response.read()"""
+
+
+
+	browser = webdriver.Firefox()
+	browser.get(url+"/Accueil")
 	browser.find_element_by_xpath("//*[@alt='Accéder au site']").click()
+	wait = WebDriverWait(browser, 10)
 	wait.until(EC.element_to_be_clickable((By.ID,'fancybox-close')))
-	#browser.find_element_by_id("fancybox-close").click()
-
+	browser.find_element_by_id("fancybox-close").click()
+	soup = BeautifulSoup(browser.execute_script("return document.documentElement.outerHTML;"))
 	browser.close()
-	print url
-	get_rayons_a(url)
-	rayon_a = get_rayons_a(url+"/Accueil")[1]
-	rayon_a_url = rayon_a.get('href')
-	rayon_a_nom = rayon_a.getText()
-	get_rayons_b(rayon_a_nom.strip(), url, rayon_a_url)"""
 
-	for rayon_a in get_rayons_a(url+"/Accueil"):
+	balise_menu = soup.find("ul", {"id":"menu-principal", "class":"menu menu-horizontal"})
+	list_menu = balise_menu.find_all("a", {"class":"firsta"})
+
+	for rayon_a in list_menu:
 		rayon_a_url = rayon_a.get('href')
 		rayon_a_nom = rayon_a.getText()
 		if len(rayon_a_url) > 3:
