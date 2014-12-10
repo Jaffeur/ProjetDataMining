@@ -42,6 +42,7 @@ rc('text', usetex=True)
 #                                Define Functions                                #
 #--------------------------------------------------------------------------------#
 
+# compute the tf-idf
 def tf(word, blob):
     return blob.words.count(word) / len(blob.words)
 
@@ -54,6 +55,7 @@ def idf(word, bloblist):
 def tfidf(word, blob, bloblist):
     return tf(word, blob) * idf(word, bloblist)
 
+# functions to normaliza data (remove stopwords and ponctuation)
 with open('stopwords_fr.txt') as f:
     Stopwords = [r.rstrip() for r in f.readlines()]
 
@@ -67,8 +69,7 @@ def remove_stopwords(s):
 def normalize_data(s):
     return remove_stopwords(remove_ponctuation(str(s))).upper()
 
-
-
+# keep only strings
 def toString(sentence):
     out = ''
     if str(sentence) != 'nan':
@@ -79,9 +80,7 @@ def toString(sentence):
 #                out += (" " + str(word))
     return out
 
-
-stemmer = Stemmer()
-
+# compute the Jaccard distance between two sentences
 def DistJaccard(str1, str2):
     if str1 != '' and str2 != '':
         str1 = set(str1.split())
@@ -97,7 +96,7 @@ def DistJaccard(str1, str2):
 # complete Database
 ProductsDB = pd.read_csv('Complete_DB.csv', encoding = 'utf8')
 
-# Golden Standard
+# Golden Standard GStandard (DataFrame):
 GoldStandard = pd.read_csv('GoldStandard.csv', sep = ';', encoding = 'utf8')
 Ids = []
 for i in range(GoldStandard.shape[0]):
@@ -111,7 +110,7 @@ for i in index_:
     GStandard.loc[j] = ProductsDB.loc[i]
     j += 1
 
-# Products to compare:
+# Products to compare Products_GS_tc (DataFrame):
 
 ProdsGS_toCompare = GoldStandard['Product Simply']
 Ids_tc = []
@@ -160,10 +159,9 @@ for i, blob in enumerate(bloblist_ing):
 ind_ = range(Products_GS_tc.shape[0])
 champs = ['nom', 'ingredients', 'descriptif']
 poids = [0.6, 0.2, 0.2]
-#colonnes = Products_GS_tc.columns.tolist()
+GS_reverse = GStandard.reindex(index=GStandard.index[::-1])
 
-
-
+# for each product of the golden standard, compute the 10 closest products in the database
 Result = {}
 for i in ind_:
     print "\n Comparaison Produit " + str(i) + " : " + Products_GS_tc['nom'].loc[i] +"\n"
@@ -185,6 +183,7 @@ for i in ind_:
         Sim_Prods.iat[k,1] = Distance
         k += 1
 
+    # compare to the whole database and stores the 10 closest products
     for j in range(10, ProductsDB.shape[0]):
         if j != i:
             Distance = 0.0
@@ -202,8 +201,27 @@ for i in ind_:
                 Sim_Prods.iat[index_max,0] = ProductsDB['Product-ID'].loc[j]
                 Sim_Prods.iat[index_max,1] = Distance
 
-    Result[Products_GS_tc['Product-ID'].loc[i]] = Sim_Prods['Id'].tolist()
+    res = Sim_Prods.sort(['Distance'])
+    Result[Products_GS_tc['Product-ID'].loc[i]] = res['Id'].tolist()
 
+# write results in a text file
+with open("Results_Similitude.txt", "a") as f_w:
+    i = 0
+    for key, value in Result.iteritems():
+        Prod_GS_index = ProductsDB[ProductsDB['Product-ID']== int(key)].index
+        f_w.write("Produit: " + ProductsDB['nom'].loc[Prod_GS_index].values[0] + "\n\n")
+        for id in value:
+            Simi_index = ProductsDB[ProductsDB['Product-ID']== int(id)].index
+            f_w.write("Match " + str(i) + ": " + ProductsDB['nom'].loc[Simi_index].values[0] + "\n")
+        f_w.write("\n")
+
+        for n in range(9):
+            GS = GS_reverse.iloc[GS_reverse.shape[0] - ((i+1)*9): GS_reverse.shape[0] - i*9]
+            GS_rr = GS.reindex(index=GS.index[::-1])
+            f_w.write("GoldSt " + str(i) + ": " + GS_rr['nom'].loc[i*9 + n] + "\n")
+        i += 1
+        f_w.write("\n\n")
+f_w.close()
 
 
 '''

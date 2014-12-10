@@ -1,0 +1,168 @@
+Produit: RAVIOLI BOLOGNAISE AUCHAN
+
+Match 4: RAVIOLI BOLOGNAISE AUCHAN
+Match 4: RAVIOLI BOLOGNAISE ZAPETTI
+Match 4: RAVIOLI BOLOGNAISE ZAPETTI
+Match 4: SAUCE BOLOGNAISE AUCHAN
+Match 4: SAUCE BOLOGNAISE AUCHAN
+Match 4: RAVIOLI LEGUMES AUCHAN
+Match 4: RAVIOLI PUR BOEUF AUCHAN
+Match 4: RAVIOLI PUR BOEUF AUCHAN
+Match 4: LASAGNES BOLOGNAISE AUCHAN
+Match 4: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 4: RAVIOLI BOLOGNAISE AUCHAN
+GoldSt 4: RAVIOLI BOLOGNAISE ZAPETTI
+GoldSt 4: RAVIOLI BOLOGNAISE ZAPETTI
+GoldSt 4: Ravioli de boeuf a la bolognaise
+GoldSt 4: Ravioli pur boeuf, certifie AB
+GoldSt 4: Ravioli pur boeuf a la sauce italienne
+GoldSt 4: Raviolis au boeuf
+GoldSt 4: Raviolis boeuf
+GoldSt 4: Ravioli pur boeuf
+
+
+Produit: PIZZA 4 FROMAGES AUCHAN
+
+Match 0: PIZZA 4 FROMAGES AUCHAN
+Match 0: Pizza aux 4 fromages
+Match 0: Pizza aux 4 fromages
+Match 0: Pizza aux 4 fromages
+Match 0: Pizza 4 fromages
+Match 0: Pizza aux 4 fromages
+Match 0: PIZZA l'EXTRA MOELLEUSE 4 FROMAGES AUCHAN
+Match 0: PIZZA JAMBON FROMAGES AUCHAN
+Match 0: La pizza 4 fromages
+Match 0: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 0: LINGETTES BEBE A L'ALOE VERA POUCE
+GoldSt 0: ECO-RECHARGE LINGETTES  BIOLANE
+GoldSt 0: LINGETTES A L'EAU NETTOYANTE MIXA BEBE
+GoldSt 0: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce
+GoldSt 0: Lingettes ultra douces au lait de toilette, sans rincer
+GoldSt 0: Lingettes h2o
+GoldSt 0: Lingettes pour bebe
+GoldSt 0: Lingettes epaisses lotionnees
+GoldSt 0: Lingettes lait de toilette
+
+
+Produit: EPINARDS BRANCHES A LA CREME AUCHAN
+
+Match 1: EPINARDS BRANCHES A LA CREME AUCHAN
+Match 1: EPINARDS HACHES A LA CREME AUCHAN
+Match 1: EPINARDS HACHES A LA CREME FRAICHE FINDUS
+Match 1: Epinards branches a la creme
+Match 1: EPINARDS BRANCHES BIO AUCHAN
+Match 1: EPINARDS BRANCHES BIO AUCHAN
+Match 1: Epinards en branches a la creme fraiche
+Match 1: POISSON A LA BORDELAISE AUCHAN
+Match 1: BEIGNETS A LA ROMAINE AUCHAN
+Match 1: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 1: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN
+GoldSt 1: PITCH PEPITES DE CHOCOLAT PASQUIER
+GoldSt 1: DOO WAP PEPITES DE CHOCOLAT HARRY'S
+GoldSt 1: Pains au lait aux pepites de chocolat
+GoldSt 1: Pains au lait aux pepites de chocolat au lait
+GoldSt 1: Brioches pepites chocolat
+GoldSt 1: Pains au lait aux pepites de chocolat
+GoldSt 1: Pains au lait aux pepites de chocolat
+GoldSt 1: Brioches aux pepites de chocolat
+
+
+Produit: LINGETTES BEBE A L'ALOE VERA POUCE
+
+Match 2: LINGETTES BEBE A L'ALOE VERA POUCE
+Match 2: Lingettes bebe
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce
+Match 2: Lingettes sensitives a laloe vera pour les peaux sensibles
+Match 2: Lingettes sensitives a laloe vera pour les peaux sensibles
+Match 2: Lingettes pour bebe
+Match 2: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 2: JUS D'ORANGE AVEC PULPE TROPICANA
+GoldSt 2: JUS D'ORANGE PULPISSIMO TROPICANA
+GoldSt 2: ORANGES PRESSEES ANDROS
+GoldSt 2: Pur jus doranges pressees avec pulpe, Pulpissimo
+GoldSt 2: Jus doranges pressees 100 pur jus
+GoldSt 2: Jus dorange 100 pur jus
+GoldSt 2: Jus d'orange avec pulpe
+GoldSt 2: Pur jus d'orange avec pulpe
+GoldSt 2: Pur jus d'orange avec pulpe
+
+
+Produit: JUS D'ORANGE AVEC PULPE TROPICANA
+
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L
+Match 3: PUR JUS D'ORANGE AVEC PULPE TROPICANA
+Match 3: JUS D'ORANGE SANS PULPE TROPICANA
+Match 3: JUS D'ORANGE SANS PULPE TROPICANA
+Match 3: JUS D'ORANGE PULPISSIMO TROPICANA
+Match 3: JUS D'ORANGE PULPISSIMO TROPICANA
+Match 3: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 3: EPINARDS BRANCHES A LA CREME AUCHAN
+GoldSt 3: EPINARDS HACHES A LA CREME AUCHAN
+GoldSt 3: EPINARDS HACHES A LA CREME FRAICHE FINDUS
+GoldSt 3: Epinards en branches, surgeles
+GoldSt 3: Epinards haches, la creme fraiche
+GoldSt 3: Epinards haches en portions
+GoldSt 3: Epinards en branches
+GoldSt 3: Epinards haches
+GoldSt 3: Epinards branches a la creme
+
+
+Produit: RAVIOLI BOLOGNAISE AUCHAN
+
+Match 4: RAVIOLI BOLOGNAISE AUCHAN
+Match 4: RAVIOLI BOLOGNAISE ZAPETTI
+Match 4: RAVIOLI BOLOGNAISE ZAPETTI
+Match 4: SAUCE BOLOGNAISE AUCHAN
+Match 4: SAUCE BOLOGNAISE AUCHAN
+Match 4: RAVIOLI LEGUMES AUCHAN
+Match 4: RAVIOLI PUR BOEUF AUCHAN
+Match 4: RAVIOLI PUR BOEUF AUCHAN
+Match 4: LASAGNES BOLOGNAISE AUCHAN
+Match 4: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 4: RAVIOLI BOLOGNAISE AUCHAN
+GoldSt 4: RAVIOLI BOLOGNAISE ZAPETTI
+GoldSt 4: RAVIOLI BOLOGNAISE ZAPETTI
+GoldSt 4: Ravioli de boeuf a la bolognaise
+GoldSt 4: Ravioli pur boeuf, certifie AB
+GoldSt 4: Ravioli pur boeuf a la sauce italienne
+GoldSt 4: Raviolis au boeuf
+GoldSt 4: Raviolis boeuf
+GoldSt 4: Ravioli pur boeuf
+
+
+Produit: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN
+
+Match 5: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN
+Match 5: PAIN AU LAIT AUCHAN
+Match 5: BISCUITS PETIT DEJEUNER PEPITES DE CHOCOLAT LAIT AUCHAN
+Match 5: DOO WAP PEPITES CHOCOLAT AU LAIT HARRY'S
+Match 5: PAIN CHOCOLAT AUCHAN
+Match 5: CHOCOLAT AU LAIT DEGUSTATION AUCHAN
+Match 5: BRIOCHES AUX PEPITES DE CHOCOLAT RIK&ROK;
+Match 5: PAIN AU LAIT PASQUIER
+Match 5: Pepites Chocolat au lait
+Match 5: AMPOULE  ECOCLASSIC 53W B22 LX 2
+
+GoldSt 5: PIZZA 4 FROMAGES AUCHAN
+GoldSt 5: DOLCE PIZZA 4 FORMAGGI SODEBO
+GoldSt 5: PIZZA FROMAGERE AUCHAN
+GoldSt 5: Pizza quatre fromages, cuite au feu de bois
+GoldSt 5: Pizza aux 4 fromages
+GoldSt 5: Pizza aux 4 fromages, emmental, edam, mozzarella et chevre
+GoldSt 5: La pizza 4 fromages
+GoldSt 5: Pizza 4 fromages
+GoldSt 5: Pizza aux 4 fromages
+
+
