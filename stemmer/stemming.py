@@ -22,14 +22,12 @@ class Stemmer:
 
 	#Delete stop words, accents, specials characters, ponctuation
 	def no_stop_words(self, text):
-		if text != None:
-			words = re.split("\s+|\p{Latin}+|[&\"#''\{\}`_^°]+", text.lower())
-			texte_nst = ""
-			for word in words:
-				if word not in self.stop_words and not re.match("\d+",word):
-					texte_nst += word + " "
-			return slugify(texte_nst, separator=" ")
-		else: return ""
+		words = re.split("\s+|\p{Latin}+|[&\"#''\{\}`_^°]+", text.lower())
+		texte_nst = ""
+		for word in words:
+			if word not in self.stop_words and not re.match("\d+",word):
+				texte_nst += word + " "
+		return slugify(texte_nst, separator=" ")
 
 	#return the lemme of a given french word
 	def lemmatize(self, word):
@@ -38,11 +36,13 @@ class Stemmer:
 
 	#return a complete stemmed french text
 	def stem(self, text):
-		clean_text = self.no_stop_words(text)
-		splited_text = clean_text.split()
-		stemmed_text = ""
-		for word in splited_text:
-			if self.lemmatize(word) != None or self.lemmatize(word) != "":
-				stemmed_text += self.lemmatize(word) + " "
-		return stemmed_text.strip()
+		if text != None:
+			clean_text = self.no_stop_words(text)
+			splited_text = clean_text.split()
+			stemmed_text = ""
+			for word in splited_text:
+				if self.lemmatize(word) != None or self.lemmatize(word) != "":
+					stemmed_text += self.lemmatize(word) + " "
+			return stemmed_text.strip()
+		else: return None
 
