@@ -25,8 +25,9 @@ class Stemmer:
 		words = re.split("\s+|\p{Latin}+|[&\"#''\{\}`_^°]+", text.lower())
 		texte_nst = ""
 		for word in words:
-			if word not in self.stop_words and not re.match("\d+",word):
-				texte_nst += word + " "
+			if word != None:
+				if word not in self.stop_words and not re.match("\d+",word):
+					texte_nst += word + " "
 		return slugify(texte_nst, separator=" ")
 
 	#return the lemme of a given french word
