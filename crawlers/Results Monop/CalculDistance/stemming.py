@@ -32,7 +32,6 @@ class Stemmer:
 	#return the lemme of a given french word
 	def lemmatize(self, word):
 		stemmer = FrenchStemmer()
-		print word
 		return stemmer.stem(word)
 
 	#return a complete stemmed french text
