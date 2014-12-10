@@ -8,7 +8,7 @@ import math
 from textblob import TextBlob as tb
 import matplotlib.pylab as plt
 import os
-import seaborn as sns
+#import seaborn as sns
 from stemming import Stemmer
 
 #--------------------------------------------------------------------------------#
@@ -30,10 +30,10 @@ params = {'axes.labelsize': 12,
           'figure.figsize': (8,6),
           'text.latex.unicode' : True}
 plt.rcParams.update(params)
-sns.set_context("poster")
+"""sns.set_context("poster")
 sns.set_style("white")
 sns.set_palette("colorblind")
-sns.set_style("ticks")
+sns.set_style("ticks")"""
 
 rc('font', **{'family':'serif', 'serif':['Helvetica']})
 rc('text', usetex=True)
@@ -167,7 +167,7 @@ for champ in champs:
     plt.title("Distance Matrix with field: " + champ,fontsize = 16)
     im = plt.imshow(Mat, interpolation='nearest', cmap=plt.cm.ocean)
     plt.colorbar(im, use_gridspec=True)
-    sns.despine()
+    #sns.despine()
     #plt.show()
     filename="MatDist_"+champ
     image_name=dirname+filename+imageformat
@@ -203,7 +203,7 @@ ax.set_aspect('equal')
 plt.title("Distance Matrix with field: TF-IDF on Ingredients",fontsize = 16)
 im = plt.imshow(Mat, interpolation='nearest', cmap=plt.cm.ocean)
 plt.colorbar(im, use_gridspec=True)
-sns.despine()
+#sns.despine()
 filename="MatDist_TFIDF_Ing"
 image_name=dirname+filename+imageformat
 fig.savefig(image_name)
