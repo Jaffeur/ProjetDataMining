@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from bs4 import BeautifulSoup
-from ghost import Ghost
-import requests, re, csv, sys
+import  re, csv, sys
 import pandas as pd
 import numpy as np
 from slugify import slugify
 ###############
-from nltk import compat
-from nltk.corpus import stopwords
-from nltk.stem import porter
-from nltk.stem.api import StemmerI
-from nltk.stem import SnowballStemmer
 from nltk.stem.snowball import FrenchStemmer
 
+"""
+""	Class that stems a french text
+	How to use:
+	stemmer = Stemmer() #initialize
+	stemmer.stem("text") #return the stemmed text (str)
+"""
 class Stemmer:
 
 	stop_words = []
@@ -26,8 +25,9 @@ class Stemmer:
 		words = re.split("\s+|\p{Latin}+|[&\"#''\{\}`_^°]+", text.lower())
 		texte_nst = ""
 		for word in words:
-			if word not in self.stop_words:
-				texte_nst += word + " "
+			if word != None:
+				if word not in self.stop_words and not re.match("\d+",word):
+					texte_nst += word + " "
 		return slugify(texte_nst, separator=" ")
 
 	#return the lemme of a given french word
@@ -37,12 +37,13 @@ class Stemmer:
 
 	#return a complete stemmed french text
 	def stem(self, text):
-		clean_text = self.no_stop_words(text)
-		splited_text = clean_text.split()
-		stemmed_text = ""
-		for word in splited_text:
-			if self.lemmatize(word) != None or self.lemmatize(word) != "":
-				stemmed_text += self.lemmatize(word) + " "
-				print word, self.lemmatize(word)
-		return stemmed_text.strip()
+		if text != None:
+			clean_text = self.no_stop_words(text)
+			splited_text = clean_text.split()
+			stemmed_text = ""
+			for word in splited_text:
+				if self.lemmatize(word) != None or self.lemmatize(word) != "":
+					stemmed_text += self.lemmatize(word) + " "
+			return stemmed_text.strip()
+		else: return None
 
