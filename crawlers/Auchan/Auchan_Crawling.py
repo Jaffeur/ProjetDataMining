@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
+import mechanize
 from ghost import Ghost
 import requests, re, csv, sys
 import pandas as pd
@@ -163,6 +164,7 @@ def get_rayons_b(nom, url, url_b):
 	r = requests.get(url+url_b)
 	if r.status_code == 200:
 		soup = BeautifulSoup(r.text, "html.parser")
+		print soup
 		balise_top_content = soup.find("div", {"class":"top-content float-container"})
 		balise_menu = balise_top_content.find("div", {"class":"menu-listes"}).find("ul", {"class":"menu menu-horizontal"})
 		balises_rayons_b = balise_menu.findChildren()
@@ -175,7 +177,7 @@ def get_rayons_b(nom, url, url_b):
 		print "Pas d'accès à l'url " , url
 
 
-def get_rayons_a(url):
+def get_rayons_a(soup):
 	r = requests.get(url)
 	if r.status_code == 200:
 		soup = BeautifulSoup(r.text, "html.parser")
@@ -196,25 +198,28 @@ def main():
 	data_frame.to_csv(file_csv, encoding='utf-8', sep='|', header= False)
 
 	url = "http://www.auchandirect.fr"
-	print "aaaa"
+
+	"""br = mechanize.Browser()
+	br.set_handle_robots(False)   # ignore robots
+	br.set_handle_refresh(False)
+	response = br.open(url)
+	print response.read()"""
 
 
-	"""browser = webdriver.Firefox()
-	browser.get(url)
+
+	browser = webdriver.Firefox()
+	browser.get(url+"/Accueil")
 	browser.find_element_by_xpath("//*[@alt='Accéder au site']").click()
 	wait = WebDriverWait(browser, 10)
 	wait.until(EC.element_to_be_clickable((By.ID,'fancybox-close')))
 	browser.find_element_by_id("fancybox-close").click()
-	url = browser.current_url
-	#browser.close()
+	soup = BeautifulSoup(browser.execute_script("return document.documentElement.outerHTML;"))
+	browser.close()
 
-	get_rayons_a(url)
-	rayon_a = get_rayons_a(url+"/Accueil")[1]
-	rayon_a_url = rayon_a.get('href')
-	rayon_a_nom = rayon_a.getText()
-	get_rayons_b(rayon_a_nom.strip(), url, rayon_a_url)"""
+	balise_menu = soup.find("ul", {"id":"menu-principal", "class":"menu menu-horizontal"})
+	list_menu = balise_menu.find_all("a", {"class":"firsta"})
 
-	for rayon_a in get_rayons_a(url+"/Accueil"):
+	for rayon_a in list_menu:
 		rayon_a_url = rayon_a.get('href')
 		rayon_a_nom = rayon_a.getText()
 		if len(rayon_a_url) > 3:
