@@ -18,7 +18,7 @@ class Stemmer:
 	stop_words = []
 
 	def __init__(self):
-		self.stop_words = np.squeeze(pd.read_csv("stopwords_fr.txt").as_matrix())
+		self.stop_words = np.squeeze(pd.read_csv("./stopwords_fr.txt").as_matrix())
 
 	#Delete stop words, accents, specials characters, ponctuation
 	def no_stop_words(self, text):
@@ -32,6 +32,7 @@ class Stemmer:
 	#return the lemme of a given french word
 	def lemmatize(self, word):
 		stemmer = FrenchStemmer()
+		print word
 		return stemmer.stem(word)
 
 	#return a complete stemmed french text
