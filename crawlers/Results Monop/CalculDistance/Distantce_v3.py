@@ -94,36 +94,40 @@ def DistJaccard(str1, str2):
 #                   Get products infos from GoldStandard                         #
 #--------------------------------------------------------------------------------#
 
+# complete Database
 ProductsDB = pd.read_csv('Complete_DB.csv', encoding = 'utf8')
+
+# Golden Standard
 GoldStandard = pd.read_csv('GoldStandard.csv', sep = ';', encoding = 'utf8')
-GS_col = GoldStandard.columns.tolist()
-ProdsGS = GoldStandard['Product Simply']
-ProdsGS_toCompare = GoldStandard[GS_col[1:]]
-
 Ids = []
-Ids_tc = []
 for i in range(GoldStandard.shape[0]):
-    Ids.append(ProdsGS.loc[i])
-    Ids_tc.extend(ProdsGS_toCompare.loc[i].tolist())
-
+    Ids.extend(GoldStandard.loc[i].tolist())
 index_ = []
-index_tc = []
 for prod_ID in Ids:
     index_.extend(ProductsDB[ProductsDB['Product-ID']== int(prod_ID)].index.tolist())
-for prod_ID in Ids_tc:
-    index_tc.extend(ProductsDB[ProductsDB['Product-ID']== int(prod_ID)].index.tolist())
-
-Products_GS = pd.DataFrame(index = range(len(index_)), columns=ProductsDB.columns)
+GStandard= pd.DataFrame(index = range(len(index_)), columns=ProductsDB.columns)
 j = 0
 for i in index_:
-    Products_GS.loc[j] = ProductsDB.loc[i]
+    GStandard.loc[j] = ProductsDB.loc[i]
     j += 1
+
+# Products to compare:
+
+ProdsGS_toCompare = GoldStandard['Product Simply']
+Ids_tc = []
+for i in range(GoldStandard.shape[0]):
+    Ids_tc.append(ProdsGS_toCompare.loc[i])
+index_tc = []
+for prod_ID in Ids_tc:
+    index_tc.extend(ProductsDB[ProductsDB['Product-ID']== int(prod_ID)].index.tolist())
 
 Products_GS_tc = pd.DataFrame(index = range(len(index_tc)), columns=ProductsDB.columns)
 j = 0
 for i in index_tc:
     Products_GS_tc.loc[j] = ProductsDB.loc[i]
     j += 1
+
+'''
 
 #--------------------------------------------------------------------------------#
 #                                  TF-IDF                                        #
@@ -145,7 +149,7 @@ for i, blob in enumerate(bloblist_ing):
     words_tfidf.append(words)
 
 
-
+'''
 
 #------------------------------------------------------------------#
 #                       Distance - Matrix                          #
@@ -153,40 +157,56 @@ for i, blob in enumerate(bloblist_ing):
 
 ## Jaccard sur les champs
 
-ind_ = range(Products_GS.shape[0])
-ind_tc = range(ProdsGS_toCompare.shape[1])
+ind_ = range(Products_GS_tc.shape[0])
 champs = ['nom', 'ingredients', 'descriptif']
-colonnes = Products_GS.columns.tolist()
+poids = [0.6, 0.2, 0.2]
+#colonnes = Products_GS_tc.columns.tolist()
 
 
-for champ in champs:
-    MatDist = pd.DataFrame()
-    MatDist = MatDist.fillna(0) # with 0s rather than NaNs
-    for i in ind_:
-        k = 0
-        for j in range(i*8, (i*8)+7):
-            Dist = 0.0
+
+Result = {}
+for i in ind_:
+    print "\n Comparaison Produit " + str(i) + " : " + Products_GS_tc['nom'].loc[i] +"\n"
+    # store the ten closest products
+    Sim_Prods = pd.DataFrame(numpy.ones((10, 2)), columns=['Id', 'Distance'])
+    # fill the first ten distance values
+    k = 0
+    for j in range(10):
+        Distance = 0.0
+        p = 0
+        Dist = 0.0
+        for champ in champs:
             Dist += DistJaccard(
-                normalize_data(Products_GS[champ].loc[i]) ,
-                normalize_data(Products_GS_tc[champ].loc[j]))
-            MatDist.loc[i, k] = Dist
-            k += 1
+                normalize_data(Products_GS_tc[champ].loc[i]) ,
+                normalize_data(ProductsDB[champ].loc[j]))*poids[p]
+            p += 1
+        Distance = Dist
+        Sim_Prods.iat[k,0] = ProductsDB['Product-ID'].loc[j]
+        Sim_Prods.iat[k,1] = Distance
+        k += 1
 
-    MatDist.to_excel('Mat_Dist_'+champ+'.xlsx')
+    for j in range(10, ProductsDB.shape[0]):
+        if j != i:
+            Distance = 0.0
+            p = 0
+            Dist = 0.0
+            for champ in champs:
+                Dist += DistJaccard(
+                    normalize_data(Products_GS_tc[champ].loc[i]) ,
+                    normalize_data(ProductsDB[champ].loc[j]))*poids[p]
+                p += 1
+            Distance = Dist
+            if Distance < max(Sim_Prods['Distance']):
+                print "match ! : " + ProductsDB['nom'].loc[j]
+                index_max = Sim_Prods['Distance'].tolist().index(max(Sim_Prods['Distance']))
+                Sim_Prods.iat[index_max,0] = ProductsDB['Product-ID'].loc[j]
+                Sim_Prods.iat[index_max,1] = Distance
 
-    Array = MatDist.as_matrix(columns=None)
-    Mat = numpy.matrix(Array)
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    ax.set_aspect('equal')
-    plt.title("Distance Matrix with field: " + champ,fontsize = 16)
-    im = plt.imshow(Mat, interpolation='nearest', cmap=plt.cm.ocean)
-    plt.colorbar(im, use_gridspec=True)
-    sns.despine()
-    filename="MatDist_"+champ
-    image_name=dirname+filename+imageformat
-    fig.savefig(image_name)
+    Result[Products_GS_tc['Product-ID'].loc[i]] = Sim_Prods['Id'].tolist()
 
+
+
+'''
 
 #------------------------------------------------------------------#
 #     Distance - Matrix with results of tf-idf on ingredients    #
@@ -221,3 +241,5 @@ sns.despine()
 filename="MatDist_TFIDF_Ing"
 image_name=dirname+filename+imageformat
 fig.savefig(image_name)
+
+'''
