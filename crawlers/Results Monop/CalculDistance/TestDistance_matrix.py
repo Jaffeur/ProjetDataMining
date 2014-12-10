@@ -43,16 +43,6 @@ def DistJaccard(str1, str2):
     str2 = set(str2.split())
     return 1.0 - float(len(str1 & str2)) / len(str1 | str2)
 
-'''
-All_ingredients_list = ProductsDB['ingredients'].values
-All_ingredients = ''
-for word in All_ingredients_list:
-    if isinstance(word, basestring):
-        All_ingredients += (" " + word.decode('utf8'))
-    else:
-        All_ingredients += (" " + str(word))
-All_ingredients = normalize_data(All_ingredients)
-'''
 
 index_ = range(26)
 groups = [index_[0:8], index_[9:17], index_[18:26]]
