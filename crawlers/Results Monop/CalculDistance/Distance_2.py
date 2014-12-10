@@ -53,7 +53,7 @@ def idf(word, bloblist):
 
 def tfidf(word, blob, bloblist):
     return tf(word, blob) * idf(word, bloblist)
-'''
+
 with open('stopwords_fr.txt') as f:
     Stopwords = [r.rstrip() for r in f.readlines()]
 
@@ -67,7 +67,7 @@ def remove_stopwords(s):
 def normalize_data(s):
     return remove_stopwords(remove_ponctuation(str(s))).upper()
 
-'''
+
 
 def toString(sentence):
     out = ''
@@ -97,15 +97,21 @@ def DistJaccard(str1, str2):
 ProductsDB = pd.read_csv('Complete_DB.csv', encoding = 'utf8')
 GoldStandard = pd.read_csv('GoldStandard.csv', sep = ';', encoding = 'utf8')
 GS_col = GoldStandard.columns.tolist()
-ProdsGS = GoldStandard['Product Simply'].tolist()
+ProdsGS = GoldStandard['Product Simply']
 ProdsGS_toCompare = GoldStandard[GS_col[1:]]
 
 Ids = []
+Ids_tc = []
 for i in range(GoldStandard.shape[0]):
-    Ids.extend(GoldStandard.loc[i].tolist())
+    Ids.append(ProdsGS.loc[i])
+    Ids_tc.extend(ProdsGS_toCompare.loc[i].tolist())
+
 index_ = []
+index_tc = []
 for prod_ID in Ids:
     index_.extend(ProductsDB[ProductsDB['Product-ID']== int(prod_ID)].index.tolist())
+for prod_ID in Ids_tc:
+    index_tc.extend(ProductsDB[ProductsDB['Product-ID']== int(prod_ID)].index.tolist())
 
 Products_GS = pd.DataFrame(index = range(len(index_)), columns=ProductsDB.columns)
 j = 0
@@ -113,12 +119,18 @@ for i in index_:
     Products_GS.loc[j] = ProductsDB.loc[i]
     j += 1
 
+Products_GS_tc = pd.DataFrame(index = range(len(index_tc)), columns=ProductsDB.columns)
+j = 0
+for i in index_tc:
+    Products_GS_tc.loc[j] = ProductsDB.loc[i]
+    j += 1
+
 #--------------------------------------------------------------------------------#
 #                                  TF-IDF                                        #
 #--------------------------------------------------------------------------------#
 
 # Ingredients corpus
-bloblist_ing = [tb(stemmer.stem(toString(ing))) for ing in Products_GS['ingredients'].tolist()]
+bloblist_ing = [tb(normalize_data(toString(ing))) for ing in (Products_GS['ingredients'].tolist() + Products_GS_tc['ingredients'].tolist())]
 
 # Compute TfIdf for ingredients, select the 10 most important words
 words_tfidf = []
@@ -142,22 +154,25 @@ for i, blob in enumerate(bloblist_ing):
 ## Jaccard sur les champs
 
 ind_ = range(Products_GS.shape[0])
+ind_tc = range(ProdsGS_toCompare.shape[1])
 champs = ['nom', 'ingredients', 'descriptif']
 colonnes = Products_GS.columns.tolist()
+
 
 for champ in champs:
     MatDist = pd.DataFrame()
     MatDist = MatDist.fillna(0) # with 0s rather than NaNs
     for i in ind_:
-        for j in ind_:
-            if i >= j:
-                Dist = 0.0
-                Dist += DistJaccard(
-                    stemmer.stem(Products_GS[champ].loc[i]) ,
-                    stemmer.stem(Products_GS[champ].loc[j]))
-                MatDist.loc[i, j] = Dist
+        k = 0
+        for j in range(i*8, (i*8)+7):
+            Dist = 0.0
+            Dist += DistJaccard(
+                normalize_data(Products_GS[champ].loc[i]) ,
+                normalize_data(Products_GS_tc[champ].loc[j]))
+            MatDist.loc[i, k] = Dist
+            k += 1
 
-    #MatDist.to_excel('TestDistance_matrix.xlsx')
+    MatDist.to_excel('Mat_Dist_'+champ+'.xlsx')
 
     Array = MatDist.as_matrix(columns=None)
     Mat = numpy.matrix(Array)
@@ -167,8 +182,12 @@ for champ in champs:
     plt.title("Distance Matrix with field: " + champ,fontsize = 16)
     im = plt.imshow(Mat, interpolation='nearest', cmap=plt.cm.ocean)
     plt.colorbar(im, use_gridspec=True)
+<<<<<<< HEAD
+    sns.despine()
+=======
     #sns.despine()
     #plt.show()
+>>>>>>> 892dd7fe16c8a9bc371c637b1544493a500fe570
     filename="MatDist_"+champ
     image_name=dirname+filename+imageformat
     fig.savefig(image_name)
@@ -189,8 +208,8 @@ for i in ind_:
         if i >= j:
             Dist = 0.0
             Dist += DistJaccard(
-                stemmer.stem(words_tfidf[i]) ,
-                stemmer.stem(words_tfidf[j]))
+                normalize_data(words_tfidf[i]) ,
+                normalize_data(words_tfidf[j]))
             MatDist.loc[i, j] = Dist
 
 #MatDist.to_excel('TestDistance_matrix.xlsx')
