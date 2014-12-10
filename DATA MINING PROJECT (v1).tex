@@ -1,0 +1,435 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{DATA MINING PROJECT}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+
+    \section{Introduction}
+
+
+    The product offer of supermarkets is large and complex and it can be
+very challenging for consumers to navigate into it. This complexity is
+an obstacle for conducting basic actions such as: - comparing price
+between supermarkets - find similar products in order to reach a
+specific budget - switch products to match a specific behaviour
+(organic, hallal, gluten-free\ldots{})
+
+The objective of this project is to provide consumers with a navigation
+tool that will his shopping easier more efficient and powerful.
+
+The following steps have been followed: - Step 1: Crawl product
+inventories from online supermarkets - Step 2: Data cleaning (avoid
+redundancy, completion, formating) - Step 3: Build Distance Functions
+between products to allow efficient substitutions - Step 4: Find the
+best candidate for a given shopping cart
+
+
+    \section{Crawling inventories}
+
+
+    For this project, we have focused our efforts on 3 online supermakets:
+Auchan, Monoprix and Simply. But the approach that we will detail below
+can be easily applied to any supermarket website, as they all share a
+similar architecture: - a welcome page with links to different
+categories (beverage, meat, fruit\ldots{}) - inside each category, you
+will have different level a sub-categories (alcohol, juice,
+soda\ldots{}) - after a couple of categorization levels (usually between
+1 and 5), you reach the product offer - by clicking on each product, you
+reach a ``product page'' where detailed information (description,
+energetic values, price\ldots{}) is displayed
+
+Our crawlers are built in two steps: - navigate through the categories
+to collect ``product page'' urls - extract relevant information for each
+``product page''
+
+The Python code for the first step is described below:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{k+kn}{import} \PY{n+nn}{requests}
+       \PY{k+kn}{from} \PY{n+nn}{bs4} \PY{k+kn}{import} \PY{n}{BeautifulSoup}
+       \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+       \PY{k+kn}{import} \PY{n+nn}{re}
+       
+       \PY{c}{\PYZsh{}different levels of categorization}
+       \PY{n}{rayonsA}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+       \PY{n}{rayonsB}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+       \PY{n}{rayonsC}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+       \PY{n}{rayonsD}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+       \PY{n}{rayonsE}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+       \PY{n}{productLink}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+       
+       \PY{c}{\PYZsh{}start at welcome page and get first level categories}
+       \PY{n}{url}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://www.livraison.simplymarket.fr/}\PY{l+s}{\PYZsq{}}
+       \PY{n}{r} \PY{o}{=} \PY{n}{requests}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{n}{url}\PY{p}{)}
+       \PY{n}{soup} \PY{o}{=} \PY{n}{BeautifulSoup}\PY{p}{(}\PY{n}{r}\PY{o}{.}\PY{n}{text}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{html.parser}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+       \PY{n}{balises\PYZus{}a}\PY{o}{=}\PY{n}{soup}\PY{o}{.}\PY{n}{find\PYZus{}all}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{class\PYZus{}}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{linkMenu}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+       
+       \PY{k}{for} \PY{n}{balise\PYZus{}a} \PY{o+ow}{in} \PY{n}{balises\PYZus{}a}\PY{p}{:}
+       	\PY{n}{rayonsA}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://www.livraison.simplymarket.fr/}\PY{l+s}{\PYZsq{}}\PY{o}{+}\PY{n}{balise\PYZus{}a}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{href}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+       
+       \PY{c}{\PYZsh{}navigate in each Level\PYZhy{}1 category}
+       \PY{k}{for} \PY{n}{rayonA} \PY{o+ow}{in} \PY{n}{rayonsA}\PY{p}{:}
+       	\PY{n}{r} \PY{o}{=} \PY{n}{requests}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{n}{rayonA}\PY{p}{)}
+       	\PY{n}{soup} \PY{o}{=} \PY{n}{BeautifulSoup}\PY{p}{(}\PY{n}{r}\PY{o}{.}\PY{n}{text}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{html.parser}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+       	\PY{n}{balises\PYZus{}a}\PY{o}{=}\PY{n}{soup}\PY{o}{.}\PY{n}{find\PYZus{}all}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{class\PYZus{}}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{lienProduit}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+       	\PY{n}{balises\PYZus{}tr}\PY{o}{=}\PY{n}{soup}\PY{o}{.}\PY{n}{find\PYZus{}all}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{tr}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{class\PYZus{}}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{trLibelle}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+       
+       \PY{c}{\PYZsh{}find product pages, if any, and add it to the list}
+       	\PY{k}{for} \PY{n}{balise\PYZus{}a} \PY{o+ow}{in} \PY{n}{balises\PYZus{}a}\PY{p}{:}
+       		\PY{n}{productLink}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://www.livraison.simplymarket.fr/}\PY{l+s}{\PYZsq{}}\PY{o}{+}\PY{n}{balise\PYZus{}a}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{href}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+       
+       \PY{c}{\PYZsh{}if no product pages can be found, find Level\PYZhy{}2 categories}
+       	\PY{k}{if} \PY{n}{balises\PYZus{}a}\PY{o}{==}\PY{p}{[}\PY{p}{]}\PY{p}{:}
+       		\PY{k}{for} \PY{n}{balise\PYZus{}tr} \PY{o+ow}{in} \PY{n}{balises\PYZus{}tr}\PY{p}{:}
+       			\PY{n}{rayonsB}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://www.livraison.simplymarket.fr/}\PY{l+s}{\PYZsq{}}\PY{o}{+}\PY{n}{balise\PYZus{}tr}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{href}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    This algorithm is repeated over each level of categorization until no
+new category is discovered. At the end, the variable productLink is a
+list that contains all the ``product page'' urls and we can move to the
+second step.
+
+The second step consist in scrapping the relevant part of the html code
+of each ``product page'' that contains the following fields: 
+\begin{itemize}
+\item product\_name
+\item brand 
+\item quantity (eg 6 for 6x33cL) 
+\item weight/volume (eg 33 for 6x33cL) 
+\item weight/volume\_total (eg 200 for 6x33cL) 
+\item unit (eg cL)
+\item description 
+\item ingredients 
+\item preservation 
+\item nutritional details
+\item origin 
+\item price 
+\item price per unit
+\end{itemize}
+
+
+    \section{Data Cleaning}
+
+
+    Once the html code containing these data has been scrapped, it needs to
+be parsed and cleaned in order to fill the table with the correct
+values. Ideally, we would have stored the code in a text database, such
+as MongoDB, and then build a parser to transfer information from MongDB
+to a standard relationnal database. For this project, we have scrapped
+and clean the data at the same time and build a csv file gathering the
+data.
+
+First, the parsing/cleaning stage consists in understanding the
+structure of the html code. For example:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:}     
+           \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{redactionnel}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+               \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{h1}\PY{o}{\PYZgt{}}\PY{n}{FOIE} \PY{n}{GRAS} \PY{n}{DE} \PY{n}{CANARD} \PY{n}{ENTIER} \PY{n}{SUD} \PY{n}{OUEST} \PY{n}{GASTRONOMIQUE} \PY{n}{MONTFORT} \PY{l+m+mi}{300}\PY{n}{G} \PY{o}{\PYZhy{}} \PY{n}{Montfort}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{h1}\PY{o}{\PYZgt{}}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{n}{Prix} \PY{n}{quantit}\PY{err}{é}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}
+                   \PY{l+m+mi}{99}\PY{p}{,}\PY{l+m+mi}{67}\PY{o}{\PYZam{}}\PY{n}{nbsp}\PY{p}{;}\PY{n}{eur}\PY{o}{/}\PY{n}{Kg}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{n}{Descriptif}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}
+                   \PY{n}{Foie} \PY{n}{gras} \PY{n}{de} \PY{n}{canard} \PY{n}{entier} \PY{n}{du} \PY{n}{Sud} \PY{n}{Ouest}\PY{o}{.}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}   
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{n}{Avantages}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{n}{La} \PY{n}{recette} \PY{n}{du} \PY{n}{Gastronomique} \PY{n}{est} \PY{n}{inspir}\PY{err}{é}\PY{n}{e} \PY{n}{des} \PY{n}{pr}\PY{err}{é}\PY{n}{parations} \PY{n}{des} \PY{n}{plus} \PY{n}{grands} \PY{n}{Chefs} \PY{p}{:} \PY{n}{une} \PY{n}{cuisson} \PY{n}{lente} \PY{n}{et} \PY{err}{à} \PY{n}{basse} \PY{n}{temp}\PY{err}{é}\PY{n}{rature} \PY{n}{qui} \PY{n}{permet} \PY{n}{de} \PY{n}{pr}\PY{err}{é}\PY{n}{server} \PY{n}{toutes} \PY{n}{les} \PY{n}{saveurs} \PY{n}{du} \PY{n}{foie} \PY{n}{gras} \PY{n}{et} \PY{n}{de} \PY{n}{sublimer} \PY{n}{sa} \PY{n}{texture}\PY{p}{,} \PY{n}{comme} \PY{n}{dans} \PY{n}{les} \PY{n}{grands} \PY{n}{restaurants}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZam{}}\PY{n}{nbsp}\PY{p}{;}\PY{o}{\PYZhy{}} \PY{n}{Un} \PY{n}{label} \PY{n}{IGP} \PY{n}{Sud}\PY{o}{\PYZhy{}}\PY{n}{Ouest} \PY{n}{gage} \PY{n}{de} \PY{n}{qualit}\PY{err}{é} \PY{n}{et} \PY{n}{de} \PY{n}{tra}\PY{err}{ç}\PY{n}{abilit}\PY{err}{é}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZhy{}} \PY{n}{Un} \PY{n}{Foie} \PY{n}{Gras} \PY{n}{Entier} \PY{p}{:} \PY{n}{le} \PY{n}{meilleur} \PY{n}{du} \PY{n}{Foie} \PY{n}{Gras}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZhy{}} \PY{n}{un} \PY{n}{Foie} \PY{n}{Gras} \PY{n}{d}\PY{err}{é}\PY{n}{moulable} \PY{n}{pour} \PY{n}{des} \PY{n}{tranches} \PY{n}{trap}\PY{err}{è}\PY{n}{zes} \PY{n}{r}\PY{err}{é}\PY{n}{guli}\PY{err}{è}\PY{n}{res}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{div}\PY{o}{\PYZgt{}}\PY{o}{\PYZhy{}} \PY{n}{pour} \PY{l+m+mi}{8} \PY{err}{à} \PY{l+m+mi}{9} \PY{n}{parts}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}} 
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{n}{Ingr}\PY{err}{é}\PY{n}{dients}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}
+                   \PY{n}{Foie} \PY{n}{gras} \PY{n}{de} \PY{n}{canard}\PY{p}{,} \PY{n}{sel}\PY{p}{,} \PY{n}{Armagnac}\PY{p}{,} \PY{n}{Porto}\PY{p}{,} \PY{n}{poivre}\PY{p}{,} \PY{n}{sucre}\PY{p}{,} \PY{n}{antioxydant} \PY{p}{:} \PY{n}{ascorbate} \PY{n}{de} \PY{n}{sodium}\PY{p}{,} \PY{n}{conservateur} \PY{p}{:} \PY{n}{nitrite} \PY{n}{de} \PY{n}{sodium}\PY{o}{.}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{n}{Conservation}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}
+                   \PY{n}{A} \PY{n}{conserver} \PY{n}{au} \PY{n}{r}\PY{err}{é}\PY{n}{frig}\PY{err}{é}\PY{n}{rateur} \PY{n}{entre} \PY{l+m+mi}{0}\PY{err}{°}\PY{n}{C} \PY{n}{et} \PY{o}{+}\PY{l+m+mi}{4}\PY{err}{°}\PY{n}{C}\PY{o}{.} \PY{n}{A} \PY{n}{consommer} \PY{n}{rapidement} \PY{n}{apr}\PY{err}{è}\PY{n}{s} \PY{n}{ouverture}\PY{o}{.}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}          
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{n}{Renseignements} \PY{n}{pratiques}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{label}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{p}\PY{o}{\PYZgt{}}\PY{n}{Sortir} \PY{n}{le} \PY{n}{produit} \PY{n}{du} \PY{n}{r}\PY{err}{é}\PY{n}{frig}\PY{err}{é}\PY{n}{rateur} \PY{n}{quelques} \PY{n}{minutes} \PY{n}{avant} \PY{n}{de} \PY{n}{le} \PY{n}{d}\PY{err}{é}\PY{n}{guster}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{p}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{p}\PY{o}{\PYZgt{}}\PY{n}{Euralis} \PY{n}{Gastronomie}\PY{o}{\PYZlt{}}\PY{n}{br}\PY{o}{\PYZgt{}}\PY{n}{Av}\PY{o}{.} \PY{n}{Gaston} \PY{n}{Phoebus} \PY{l+m+mi}{64230} \PY{n}{LESCAR}\PY{o}{\PYZam{}}\PY{n}{nbsp}\PY{p}{;}\PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{p}\PY{o}{\PYZgt{}}
+               \PY{o}{\PYZlt{}}\PY{o}{/}\PY{n}{div}\PY{o}{\PYZgt{}}           
+                       \PY{o}{\PYZlt{}}\PY{n}{div} \PY{n}{class}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{texteProduit}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}           
+               \PY{o}{\PYZlt{}}\PY{n}{table} \PY{n}{width}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{100}\PY{l+s}{\PYZpc{}}\PY{l+s}{\PYZdq{}} \PY{n}{cellspacing}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{0}\PY{l+s}{\PYZdq{}} \PY{n}{cellpadding}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{0}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZgt{}}
+                   \PY{o}{\PYZlt{}}\PY{n}{tbody}\PY{o}{\PYZgt{}}\PY{o}{\PYZlt{}}\PY{n}{tr}\PY{o}{\PYZgt{}}
+\end{Verbatim}
+
+    For this example, we can observe that each piece of information is
+preceded by its label (eg `Conservation'). The parser will try to find
+these labels and if they exist, it will take the information that comes
+right after and store it in the relevant variable.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{k}{if} \PY{l+s}{\PYZsq{}}\PY{l+s}{Conservation}\PY{l+s}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{reduced\PYZus{}prod\PYZus{}info}\PY{p}{:}
+       			\PY{n}{index\PYZus{}conservation}\PY{o}{=}\PY{n}{reduced\PYZus{}prod\PYZus{}info}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Conservation}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+       			\PY{n}{conservation}\PY{o}{=}\PY{n}{reduced\PYZus{}prod\PYZus{}info}\PY{p}{[}\PY{n}{index\PYZus{}conservation}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+    Some data are stored in a different format than expected in our
+database. To solve this, we have used regular expressions in order to
+recognize patterns and extract exactly what we were looking for.
+\\
+Example: 
+\\
+FOIE GRAS DE CANARD ENTIER SUD OUEST GASTRONOMIQUE MONTFORT
+300G - Montfort
+\\
+\\
+We want to have:
+\begin{itemize}
+ \item name = FOIE GRAS DE CANARD ENTIER SUD OUEST
+GASTRONOMIQUE MONTFORT 
+\item quantity = 1 
+\item weight/volume = 300 
+\item unit=G
+\end{itemize}
+In Python, this will translate:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{n}{title}\PY{o}{=}\PY{n}{re}\PY{o}{.}\PY{n}{match}\PY{p}{(}\PY{l+s}{r\PYZsq{}}\PY{l+s}{(.*)}\PY{l+s}{\PYZbs{}}\PY{l+s}{s(}\PY{l+s}{\PYZbs{}}\PY{l+s}{d+}\PY{l+s}{\PYZbs{}}\PY{l+s}{.?}\PY{l+s}{\PYZbs{}}\PY{l+s}{d+?)(KG|G|ML|CL|L)}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{nom}\PY{p}{)}
+       		\PY{k}{if} \PY{n}{title}\PY{o}{!=}\PY{n+nb+bp}{None}\PY{p}{:}
+       			\PY{n}{nom}\PY{o}{=}\PY{n}{title}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+       			\PY{n}{quantite}\PY{o}{=}\PY{l+m+mi}{1}
+       			\PY{n}{poids\PYZus{}volume\PYZus{}total}\PY{o}{=}\PY{n}{title}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+       			\PY{n}{unite}\PY{o}{=}\PY{n}{title}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+    By iterating this operation on most observed formats, we managed to
+build a clean dataset available for analysis.
+
+
+    \section{Distance between products}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} 
+\end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
