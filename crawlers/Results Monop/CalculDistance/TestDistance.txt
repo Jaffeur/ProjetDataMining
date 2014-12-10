@@ -1,0 +1,768 @@
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.375
+ingredients     :     0.666666666667
+descriptif     :     0.333333333333
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.875
+ingredients     :     0.962962962963
+descriptif     :     0.923076923077
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.571428571429
+ingredients     :     0.675675675676
+descriptif     :     1.0
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.714285714286
+ingredients     :     0.923076923077
+descriptif     :     0.5
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS EN BRANCHES
+nom     :     0.857142857143
+ingredients     :     1.0
+descriptif     :     0.974358974359
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS HACH__S
+nom     :     0.857142857143
+ingredients     :     0.961538461538
+descriptif     :     0.975
+EPINARDS HACHES A LA CREME AUCHAN  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.875
+ingredients     :     0.837209302326
+descriptif     :     1.0
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.375
+ingredients     :     0.666666666667
+descriptif     :     0.333333333333
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.888888888889
+ingredients     :     0.941176470588
+descriptif     :     0.923076923077
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.428571428571
+ingredients     :     0.741935483871
+descriptif     :     1.0
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.75
+ingredients     :     0.941176470588
+descriptif     :     0.5
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS EN BRANCHES
+nom     :     0.875
+ingredients     :     1.0
+descriptif     :     0.974358974359
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS HACH__S
+nom     :     0.875
+ingredients     :     0.9375
+descriptif     :     0.975
+EPINARDS HACHES A LA CREME FRAICHE FINDUS  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.888888888889
+ingredients     :     0.823529411765
+descriptif     :     1.0
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.875
+ingredients     :     0.962962962963
+descriptif     :     0.923076923077
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.888888888889
+ingredients     :     0.941176470588
+descriptif     :     0.923076923077
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.833333333333
+ingredients     :     1.0
+descriptif     :     1.0
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.8
+ingredients     :     0.5
+descriptif     :     0.916666666667
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS EN BRANCHES
+nom     :     0.333333333333
+ingredients     :     0.75
+descriptif     :     1.0
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS HACH__S
+nom     :     0.75
+ingredients     :     0.75
+descriptif     :     1.0
+EPINARDS EN BRANCHES, SURGELES  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.5
+ingredients     :     0.923076923077
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.571428571429
+ingredients     :     0.675675675676
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.428571428571
+ingredients     :     0.741935483871
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.833333333333
+ingredients     :     1.0
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.6
+ingredients     :     0.961538461538
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS EN BRANCHES
+nom     :     0.8
+ingredients     :     1.0
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS HACH__S
+nom     :     0.8
+ingredients     :     1.0
+descriptif     :     1.0
+EPINARDS HACHES, LA CREME FRAICHE  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.833333333333
+ingredients     :     0.833333333333
+descriptif     :     1.0
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.714285714286
+ingredients     :     0.923076923077
+descriptif     :     0.5
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.75
+ingredients     :     0.941176470588
+descriptif     :     0.5
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.8
+ingredients     :     0.5
+descriptif     :     0.916666666667
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.6
+ingredients     :     0.961538461538
+descriptif     :     1.0
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS EN BRANCHES
+nom     :     0.75
+ingredients     :     1.0
+descriptif     :     0.945945945946
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS HACH__S
+nom     :     0.75
+ingredients     :     0.75
+descriptif     :     0.947368421053
+EPINARDS HACHES EN PORTIONS  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.8
+ingredients     :     0.962962962963
+descriptif     :     1.0
+EPINARDS EN BRANCHES  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.857142857143
+ingredients     :     1.0
+descriptif     :     0.974358974359
+EPINARDS EN BRANCHES  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.875
+ingredients     :     1.0
+descriptif     :     0.974358974359
+EPINARDS EN BRANCHES  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.333333333333
+ingredients     :     0.75
+descriptif     :     1.0
+EPINARDS EN BRANCHES  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.8
+ingredients     :     1.0
+descriptif     :     1.0
+EPINARDS EN BRANCHES  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.75
+ingredients     :     1.0
+descriptif     :     0.945945945946
+EPINARDS EN BRANCHES  ||  EPINARDS EN BRANCHES
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS EN BRANCHES  ||  EPINARDS HACH__S
+nom     :     0.666666666667
+ingredients     :     1.0
+descriptif     :     0.660377358491
+EPINARDS EN BRANCHES  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.333333333333
+ingredients     :     0.961538461538
+descriptif     :     0.844827586207
+EPINARDS HACH__S  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.857142857143
+ingredients     :     0.961538461538
+descriptif     :     0.975
+EPINARDS HACH__S  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.875
+ingredients     :     0.9375
+descriptif     :     0.975
+EPINARDS HACH__S  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.75
+ingredients     :     0.75
+descriptif     :     1.0
+EPINARDS HACH__S  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.8
+ingredients     :     1.0
+descriptif     :     1.0
+EPINARDS HACH__S  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.75
+ingredients     :     0.75
+descriptif     :     0.947368421053
+EPINARDS HACH__S  ||  EPINARDS EN BRANCHES
+nom     :     0.666666666667
+ingredients     :     1.0
+descriptif     :     0.660377358491
+EPINARDS HACH__S  ||  EPINARDS HACH__S
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+EPINARDS HACH__S  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.75
+ingredients     :     0.961538461538
+descriptif     :     0.847457627119
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS HACHES A LA CREME AUCHAN
+nom     :     0.875
+ingredients     :     0.837209302326
+descriptif     :     1.0
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS HACHES A LA CREME FRAICHE FINDUS
+nom     :     0.888888888889
+ingredients     :     0.823529411765
+descriptif     :     1.0
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS EN BRANCHES, SURGELES
+nom     :     0.5
+ingredients     :     0.923076923077
+descriptif     :     1.0
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS HACHES, LA CREME FRAICHE
+nom     :     0.833333333333
+ingredients     :     0.833333333333
+descriptif     :     1.0
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS HACHES EN PORTIONS
+nom     :     0.8
+ingredients     :     0.962962962963
+descriptif     :     1.0
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS EN BRANCHES
+nom     :     0.333333333333
+ingredients     :     0.961538461538
+descriptif     :     0.844827586207
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS HACH__S
+nom     :     0.75
+ingredients     :     0.961538461538
+descriptif     :     0.847457627119
+EPINARDS BRANCHES __ LA CR__ME  ||  EPINARDS BRANCHES __ LA CR__ME
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.0
+ingredients     :     0.32
+descriptif     :     0.5
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.5
+ingredients     :     0.827586206897
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.857142857143
+ingredients     :     0.829268292683
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.857142857143
+ingredients     :     0.564516129032
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLIS AU BOEUF
+nom     :     1.0
+ingredients     :     0.824324324324
+descriptif     :     0.833333333333
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLIS BOEUF
+nom     :     1.0
+ingredients     :     0.897058823529
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI PUR BOEUF
+nom     :     0.8
+ingredients     :     0.75
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.0
+ingredients     :     0.32
+descriptif     :     0.5
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.5
+ingredients     :     0.840909090909
+descriptif     :     0.952380952381
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.857142857143
+ingredients     :     0.843373493976
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.857142857143
+ingredients     :     0.564516129032
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLIS AU BOEUF
+nom     :     1.0
+ingredients     :     0.808219178082
+descriptif     :     0.666666666667
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLIS BOEUF
+nom     :     1.0
+ingredients     :     0.897058823529
+descriptif     :     1.0
+RAVIOLI BOLOGNAISE ZAPETTI  ||  RAVIOLI PUR BOEUF
+nom     :     0.8
+ingredients     :     0.75
+descriptif     :     1.0
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.5
+ingredients     :     0.827586206897
+descriptif     :     1.0
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.5
+ingredients     :     0.840909090909
+descriptif     :     0.952380952381
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.666666666667
+ingredients     :     0.824742268041
+descriptif     :     1.0
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.666666666667
+ingredients     :     0.797752808989
+descriptif     :     0.967741935484
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLIS AU BOEUF
+nom     :     0.75
+ingredients     :     0.846153846154
+descriptif     :     0.888888888889
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLIS BOEUF
+nom     :     0.75
+ingredients     :     0.931034482759
+descriptif     :     1.0
+RAVIOLI DE BOEUF A LA BOLOGNAISE  ||  RAVIOLI PUR BOEUF
+nom     :     0.5
+ingredients     :     0.857142857143
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.857142857143
+ingredients     :     0.829268292683
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.857142857143
+ingredients     :     0.843373493976
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.666666666667
+ingredients     :     0.824742268041
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.571428571429
+ingredients     :     0.825581395349
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLIS AU BOEUF
+nom     :     0.833333333333
+ingredients     :     0.835294117647
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLIS BOEUF
+nom     :     0.833333333333
+ingredients     :     0.898734177215
+descriptif     :     1.0
+RAVIOLI PUR BOEUF, CERTIFIE AB  ||  RAVIOLI PUR BOEUF
+nom     :     0.4
+ingredients     :     0.845070422535
+descriptif     :     1.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.857142857143
+ingredients     :     0.564516129032
+descriptif     :     1.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.857142857143
+ingredients     :     0.564516129032
+descriptif     :     1.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.666666666667
+ingredients     :     0.797752808989
+descriptif     :     0.967741935484
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.571428571429
+ingredients     :     0.825581395349
+descriptif     :     1.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLIS AU BOEUF
+nom     :     0.833333333333
+ingredients     :     0.820512820513
+descriptif     :     1.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLIS BOEUF
+nom     :     0.833333333333
+ingredients     :     0.888888888889
+descriptif     :     1.0
+RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE  ||  RAVIOLI PUR BOEUF
+nom     :     0.4
+ingredients     :     0.809523809524
+descriptif     :     1.0
+RAVIOLIS AU BOEUF  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     1.0
+ingredients     :     0.824324324324
+descriptif     :     0.833333333333
+RAVIOLIS AU BOEUF  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     1.0
+ingredients     :     0.808219178082
+descriptif     :     0.666666666667
+RAVIOLIS AU BOEUF  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.75
+ingredients     :     0.846153846154
+descriptif     :     0.888888888889
+RAVIOLIS AU BOEUF  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.833333333333
+ingredients     :     0.835294117647
+descriptif     :     1.0
+RAVIOLIS AU BOEUF  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.833333333333
+ingredients     :     0.820512820513
+descriptif     :     1.0
+RAVIOLIS AU BOEUF  ||  RAVIOLIS AU BOEUF
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLIS AU BOEUF  ||  RAVIOLIS BOEUF
+nom     :     0.0
+ingredients     :     0.885714285714
+descriptif     :     1.0
+RAVIOLIS AU BOEUF  ||  RAVIOLI PUR BOEUF
+nom     :     0.75
+ingredients     :     0.783333333333
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     1.0
+ingredients     :     0.897058823529
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     1.0
+ingredients     :     0.897058823529
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.75
+ingredients     :     0.931034482759
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.833333333333
+ingredients     :     0.898734177215
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.833333333333
+ingredients     :     0.888888888889
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLIS AU BOEUF
+nom     :     0.0
+ingredients     :     0.885714285714
+descriptif     :     1.0
+RAVIOLIS BOEUF  ||  RAVIOLIS BOEUF
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+RAVIOLIS BOEUF  ||  RAVIOLI PUR BOEUF
+nom     :     0.75
+ingredients     :     0.890909090909
+descriptif     :     0.944444444444
+RAVIOLI PUR BOEUF  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.8
+ingredients     :     0.75
+descriptif     :     1.0
+RAVIOLI PUR BOEUF  ||  RAVIOLI BOLOGNAISE ZAPETTI
+nom     :     0.8
+ingredients     :     0.75
+descriptif     :     1.0
+RAVIOLI PUR BOEUF  ||  RAVIOLI DE BOEUF A LA BOLOGNAISE
+nom     :     0.5
+ingredients     :     0.857142857143
+descriptif     :     1.0
+RAVIOLI PUR BOEUF  ||  RAVIOLI PUR BOEUF, CERTIFIE AB
+nom     :     0.4
+ingredients     :     0.845070422535
+descriptif     :     1.0
+RAVIOLI PUR BOEUF  ||  RAVIOLI PUR BOEUF A LA SAUCE ITALIENNE
+nom     :     0.4
+ingredients     :     0.809523809524
+descriptif     :     1.0
+RAVIOLI PUR BOEUF  ||  RAVIOLIS AU BOEUF
+nom     :     0.75
+ingredients     :     0.783333333333
+descriptif     :     1.0
+RAVIOLI PUR BOEUF  ||  RAVIOLIS BOEUF
+nom     :     0.75
+ingredients     :     0.890909090909
+descriptif     :     0.944444444444
+RAVIOLI PUR BOEUF  ||  RAVIOLI PUR BOEUF
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.857142857143
+ingredients     :     0.822222222222
+descriptif     :     0.733333333333
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.888888888889
+ingredients     :     0.693548387097
+descriptif     :     0.941176470588
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.666666666667
+ingredients     :     0.233333333333
+descriptif     :     1.0
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.8
+ingredients     :     0.833333333333
+descriptif     :     0.962264150943
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  LA PIZZA 4 FROMAGES
+nom     :     0.714285714286
+ingredients     :     0.676056338028
+descriptif     :     0.964285714286
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  PIZZA 4 FROMAGES
+nom     :     0.666666666667
+ingredients     :     0.823529411765
+descriptif     :     0.972972972973
+DOLCE PIZZA 4 FORMAGGI SODEBO  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.666666666667
+ingredients     :     0.85393258427
+descriptif     :     0.961538461538
+PIZZA FROMAGERE AUCHAN  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.857142857143
+ingredients     :     0.822222222222
+descriptif     :     0.733333333333
+PIZZA FROMAGERE AUCHAN  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+PIZZA FROMAGERE AUCHAN  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.857142857143
+ingredients     :     0.818181818182
+descriptif     :     0.928571428571
+PIZZA FROMAGERE AUCHAN  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.8
+ingredients     :     0.828282828283
+descriptif     :     1.0
+PIZZA FROMAGERE AUCHAN  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.888888888889
+ingredients     :     0.729411764706
+descriptif     :     0.96
+PIZZA FROMAGERE AUCHAN  ||  LA PIZZA 4 FROMAGES
+nom     :     0.833333333333
+ingredients     :     0.818181818182
+descriptif     :     0.96
+PIZZA FROMAGERE AUCHAN  ||  PIZZA 4 FROMAGES
+nom     :     0.8
+ingredients     :     0.888888888889
+descriptif     :     0.970588235294
+PIZZA FROMAGERE AUCHAN  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.8
+ingredients     :     0.795698924731
+descriptif     :     0.95652173913
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.888888888889
+ingredients     :     0.693548387097
+descriptif     :     0.941176470588
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.857142857143
+ingredients     :     0.818181818182
+descriptif     :     0.928571428571
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.666666666667
+ingredients     :     0.718309859155
+descriptif     :     1.0
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.8
+ingredients     :     0.779411764706
+descriptif     :     0.98
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  LA PIZZA 4 FROMAGES
+nom     :     0.714285714286
+ingredients     :     0.746031746032
+descriptif     :     0.958333333333
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  PIZZA 4 FROMAGES
+nom     :     0.666666666667
+ingredients     :     0.839285714286
+descriptif     :     0.969696969697
+PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.666666666667
+ingredients     :     0.84
+descriptif     :     0.954545454545
+PIZZA AUX 4 FROMAGES  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.666666666667
+ingredients     :     0.233333333333
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.8
+ingredients     :     0.828282828283
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.666666666667
+ingredients     :     0.718309859155
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.571428571429
+ingredients     :     0.838709677419
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  LA PIZZA 4 FROMAGES
+nom     :     0.25
+ingredients     :     0.631578947368
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.846153846154
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.857142857143
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.8
+ingredients     :     0.833333333333
+descriptif     :     0.962264150943
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.888888888889
+ingredients     :     0.729411764706
+descriptif     :     0.96
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.8
+ingredients     :     0.779411764706
+descriptif     :     0.98
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.571428571429
+ingredients     :     0.838709677419
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  LA PIZZA 4 FROMAGES
+nom     :     0.625
+ingredients     :     0.843373493976
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  PIZZA 4 FROMAGES
+nom     :     0.571428571429
+ingredients     :     0.794117647059
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.571428571429
+ingredients     :     0.594594594595
+descriptif     :     1.0
+LA PIZZA 4 FROMAGES  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.714285714286
+ingredients     :     0.676056338028
+descriptif     :     0.964285714286
+LA PIZZA 4 FROMAGES  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.833333333333
+ingredients     :     0.818181818182
+descriptif     :     0.96
+LA PIZZA 4 FROMAGES  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.714285714286
+ingredients     :     0.746031746032
+descriptif     :     0.958333333333
+LA PIZZA 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.25
+ingredients     :     0.631578947368
+descriptif     :     1.0
+LA PIZZA 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.625
+ingredients     :     0.843373493976
+descriptif     :     1.0
+LA PIZZA 4 FROMAGES  ||  LA PIZZA 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+LA PIZZA 4 FROMAGES  ||  PIZZA 4 FROMAGES
+nom     :     0.25
+ingredients     :     0.78125
+descriptif     :     0.875
+LA PIZZA 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.25
+ingredients     :     0.809523809524
+descriptif     :     0.9375
+PIZZA 4 FROMAGES  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.666666666667
+ingredients     :     0.823529411765
+descriptif     :     0.972972972973
+PIZZA 4 FROMAGES  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.8
+ingredients     :     0.888888888889
+descriptif     :     0.970588235294
+PIZZA 4 FROMAGES  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.666666666667
+ingredients     :     0.839285714286
+descriptif     :     0.969696969697
+PIZZA 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.846153846154
+descriptif     :     1.0
+PIZZA 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.571428571429
+ingredients     :     0.794117647059
+descriptif     :     1.0
+PIZZA 4 FROMAGES  ||  LA PIZZA 4 FROMAGES
+nom     :     0.25
+ingredients     :     0.78125
+descriptif     :     0.875
+PIZZA 4 FROMAGES  ||  PIZZA 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0
+PIZZA 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.788732394366
+descriptif     :     0.868421052632
+PIZZA AUX 4 FROMAGES  ||  DOLCE PIZZA 4 FORMAGGI SODEBO
+nom     :     0.666666666667
+ingredients     :     0.85393258427
+descriptif     :     0.961538461538
+PIZZA AUX 4 FROMAGES  ||  PIZZA FROMAGERE AUCHAN
+nom     :     0.8
+ingredients     :     0.795698924731
+descriptif     :     0.95652173913
+PIZZA AUX 4 FROMAGES  ||  PIZZA QUATRE FROMAGES, CUITE AU FEU DE BOIS
+nom     :     0.666666666667
+ingredients     :     0.84
+descriptif     :     0.954545454545
+PIZZA AUX 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.857142857143
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES, EMMENTAL, EDAM, MOZZARELLA ET CHEVRE
+nom     :     0.571428571429
+ingredients     :     0.594594594595
+descriptif     :     1.0
+PIZZA AUX 4 FROMAGES  ||  LA PIZZA 4 FROMAGES
+nom     :     0.25
+ingredients     :     0.809523809524
+descriptif     :     0.9375
+PIZZA AUX 4 FROMAGES  ||  PIZZA 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.788732394366
+descriptif     :     0.868421052632
+PIZZA AUX 4 FROMAGES  ||  PIZZA AUX 4 FROMAGES
+nom     :     0.0
+ingredients     :     0.0
+descriptif     :     0.0

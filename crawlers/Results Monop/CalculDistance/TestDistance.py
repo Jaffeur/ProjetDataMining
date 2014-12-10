@@ -1,20 +1,30 @@
 # -*- coding: utf-8 -*-
+from __future__ import division, unicode_literals
 
-import distance as d
 import pandas as pd
-import numpy as np
 import string
-from slugify import slugify, Slugify
 import math
+from textblob import TextBlob as tb
 
+def tf(word, blob):
+    return blob.words.count(word) / len(blob.words)
 
+def n_containing(word, bloblist):
+    return sum(1 for blob in bloblist if word in blob)
 
-ProductsDB = pd.read_csv('../Complete_DB.csv')
+def idf(word, bloblist):
+    return math.log(len(bloblist) / (1 + n_containing(word, bloblist)))
+
+def tfidf(word, blob, bloblist):
+    return tf(word, blob) * idf(word, bloblist)
+
+ProductsDB = pd.read_csv('../../GS_Pierre.csv', sep = ';', encoding = 'utf8')
+
 
 with open('stopwords_fr.txt') as f:
     Stopwords = [r.rstrip() for r in f.readlines()]
 
-ProductsTest = ProductsDB.loc[385:387]
+ProductsTest = ProductsDB.loc[1:28]
 
 exclude = set(string.punctuation)
 def remove_ponctuation(s):
@@ -23,20 +33,40 @@ def remove_ponctuation(s):
 def remove_stopwords(s):
     return ' '.join(word for word in s.split() if word not in set(Stopwords))
 
+def normalize_data(s):
+    return remove_stopwords(remove_ponctuation(str(s))).upper()
+
+def toString(sentence):
+    out = ''
+    for word in sentence.split():
+        if isinstance(word, basestring):
+            out += (" " + word)
+        else:
+            out += (" " + str(word))
+    return out
 
 def DistJaccard(str1, str2):
     str1 = set(str1.split())
     str2 = set(str2.split())
     return 1.0 - float(len(str1 & str2)) / len(str1 | str2)
 
-index_ = ProductsTest.index.tolist()
 
-for i in index_:
-    for j in index_:
-        print remove_stopwords(remove_ponctuation(ProductsDB[['nom', 'ingredients']].loc[i]))
-        #print remove_stopwords(ProductsDB['ingredients'].loc[i])
-        print remove_stopwords(remove_ponctuation(ProductsDB[['nom', 'ingredients']].loc[j]))
-        #print remove_stopwords(ProductsDB['ingredients'].loc[j])
-        print DistJaccard(
-            remove_ponctuation(ProductsDB[['nom', 'ingredients']].loc[i]) ,
-            remove_ponctuation(ProductsDB[['nom', 'ingredients']].loc[j]))
+
+bloblist_nom = [tb(nom) for nom in (ProductsDB['nom']).tolist()]
+bloblist_ing = [tb(normalize_data(toString(ing))) for ing in ProductsDB['ingredients'].tolist()]
+
+#print tfidf('FROMAGES', tb(normalize_data(ProductsDB['ingredients'].loc[19])), normalize_data(bloblist))
+
+for i, blob in enumerate(bloblist_nom):
+    print("Top words in document {}".format(i + 1))
+    scores = {word: tfidf(word, blob, bloblist_nom) for word in blob.words}
+    sorted_words = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    for word, score in sorted_words[:3]:
+        print("\tWord: {}, TF-IDF: {}".format(word, round(score, 5)))
+
+for i, blob in enumerate(bloblist_ing):
+    print("Top words in document {}".format(i + 1))
+    scores = {word: tfidf(word, blob, bloblist_ing) for word in blob.words}
+    sorted_words = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    for word, score in sorted_words[:3]:
+        print("\tWord: {}, TF-IDF: {}".format(word, round(score, 5)))
