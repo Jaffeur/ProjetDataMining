@@ -225,20 +225,9 @@ with open("Results_Similitude_2.txt", "a") as f_w:
             Res_DF.loc[i, 'Marque'] = ProductsDB['marque'].loc[Simi_index].values[0]
         i += 1
         f_w.write("\n")
-
-
-
-'''
-        for n in range(9):
-            GS = GS_reverse.iloc[GS_reverse.shape[0] - ((i+1)*9): GS_reverse.shape[0] - i*9]
-            GS_rr = GS.reindex(index=GS.index[::-1])
-            f_w.write("GoldSt " + str(i) + ": " + GS_rr['nom'].loc[i*9 + n] + '     ' +GS_rr['enseigne'].loc[i*9 + n] +"\n")
-        i += 1
-        f_w.write("\n\n")
-        '''
 f_w.close()
 
-Res_DF.to_csv("Resultat_SimilarProducts.csv", sep='|', encoding="utf-8", header=True, columns = ['Type', 'Produit', 'Enseigne', 'Marque'])
+Res_DF.to_csv("Resultat_SimilarProducts.csv", sep=",", encoding="utf-8", header=True, columns = ['Type', 'Produit', 'Enseigne', 'Marque'])
 
 '''
 

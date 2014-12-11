@@ -446,7 +446,17 @@ and $ card(A \cap B) $ represents the number of common words in String A and B.
 \\
 In Python, it translates as below:
 
-code Jaccard
+ \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{c}{\PYZsh{} compute the Jaccard distance between two sentences}
+       \PY{k}{def} \PY{n+nf}{DistJaccard}\PY{p}{(}\PY{n}{str1}\PY{p}{,} \PY{n}{str2}\PY{p}{)}\PY{p}{:}
+           \PY{k}{if} \PY{n}{str1} \PY{o}{!=} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}} \PY{o+ow}{and} \PY{n}{str2} \PY{o}{!=} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+               \PY{n}{str1} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{str1}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+               \PY{n}{str2} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{str2}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+               \PY{k}{return} \PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{str1} \PY{o}{\PYZam{}} \PY{n}{str2}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n+nb}{len}\PY{p}{(}\PY{n}{str1} \PY{o}{|} \PY{n}{str2}\PY{p}{)}
+           \PY{k}{else}\PY{p}{:}
+               \PY{k}{return} \PY{n}{numpy}\PY{o}{.}\PY{n}{nan}
+\end{Verbatim}
+
 
 
 
@@ -471,7 +481,30 @@ becomes:
 \\
 In Python, we have:
 
-code Stopwords
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{c}{\PYZsh{} functions to normaliza data (remove stopwords, ponctuation and numbers)}
+       \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{stopwords\PYZus{}fr.txt}\PY{l+s}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{f}\PY{p}{:}
+           \PY{n}{Stopwords} \PY{o}{=} \PY{p}{[}\PY{n}{r}\PY{o}{.}\PY{n}{rstrip}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{r} \PY{o+ow}{in} \PY{n}{f}\PY{o}{.}\PY{n}{readlines}\PY{p}{(}\PY{p}{)}\PY{p}{]}
+       
+       \PY{n}{exclude} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{string}\PY{o}{.}\PY{n}{punctuation}\PY{p}{)}
+       \PY{k}{def} \PY{n+nf}{remove\PYZus{}ponctuation}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{:}
+           \PY{k}{return} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{ch} \PY{k}{for} \PY{n}{ch} \PY{o+ow}{in} \PY{n}{s} \PY{k}{if} \PY{n}{ch} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{exclude}\PY{p}{)}
+       
+       \PY{k}{def} \PY{n+nf}{remove\PYZus{}stopwords}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{:}
+           \PY{k}{return} \PY{l+s}{\PYZsq{}}\PY{l+s}{ }\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{word} \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{s}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)} \PY{k}{if} \PY{n}{word} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n+nb}{set}\PY{p}{(}\PY{n}{Stopwords}\PY{p}{)}\PY{p}{)}
+       
+       \PY{k}{def} \PY{n+nf}{normalize\PYZus{}data}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{:}
+           \PY{k}{return} \PY{n}{remove\PYZus{}stopwords}\PY{p}{(}\PY{n}{remove\PYZus{}ponctuation}\PY{p}{(}\PY{n+nb}{str}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{upper}\PY{p}{(}\PY{p}{)}
+       
+       \PY{c}{\PYZsh{} keep only strings}
+       \PY{k}{def} \PY{n+nf}{toString}\PY{p}{(}\PY{n}{sentence}\PY{p}{)}\PY{p}{:}
+           \PY{n}{out} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}
+           \PY{k}{if} \PY{n+nb}{str}\PY{p}{(}\PY{n}{sentence}\PY{p}{)} \PY{o}{!=} \PY{l+s}{\PYZsq{}}\PY{l+s}{nan}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+               \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{sentence}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                   \PY{k}{if} \PY{n+nb}{isinstance}\PY{p}{(}\PY{n}{word}\PY{p}{,} \PY{n+nb}{basestring}\PY{p}{)}\PY{p}{:}
+                       \PY{n}{out} \PY{o}{+}\PY{o}{=} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{+} \PY{n}{word}\PY{p}{)}
+           \PY{k}{return} \PY{n}{out}
+\end{Verbatim}
 
 
 	\subsection{Lemmatization}
@@ -499,6 +532,9 @@ We chose 6 initial products from the Simply inventory but in different product c
 
 By running the algorithm on the initial products, we can see if it performs as expected.
 
+\begin{figure}[!h]
+\includegraphics[width=15cm]{/Users/pierre/Documents/Telecom ParisTech/MS_Big_Data/ProjetDataMining/crawlers/Results Monop/CalculDistance/results_images/MatDist_nom_1/Diapositive1.png}
+\end{figure}
 
 
     % Add a bibliography block to the postdoc
