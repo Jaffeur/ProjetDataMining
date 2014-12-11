@@ -140,12 +140,11 @@ for champ in champs:
     MatDist = MatDist.fillna(0) # with 0s rather than NaNs
     for i in ind_:
         for j in ind_:
-            if i != j:
-                Dist = 0.0
-                Dist += DistJaccard(
-                    normalize_data(Products_GS[champ].loc[i]) ,
-                    normalize_data(Products_GS[champ].loc[j]))
-                MatDist.loc[i, j] = Dist
+            Dist = 0.0
+            Dist += DistJaccard(
+                normalize_data(Products_GS[champ].loc[i]) ,
+                normalize_data(Products_GS[champ].loc[j]))
+            MatDist.loc[i, j] = Dist
 
     #MatDist.to_excel('TestDistance_matrix.xlsx')
 

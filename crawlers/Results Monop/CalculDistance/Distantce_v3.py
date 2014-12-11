@@ -76,8 +76,6 @@ def toString(sentence):
         for word in sentence.split():
             if isinstance(word, basestring):
                 out += (" " + word)
-#            else:
-#                out += (" " + str(word))
     return out
 
 # compute the Jaccard distance between two sentences
@@ -165,7 +163,7 @@ GS_reverse = GStandard.reindex(index=GStandard.index[::-1])
 Result = {}
 for i in ind_:
     print "\n Comparaison Produit " + str(i) + " : " + Products_GS_tc['nom'].loc[i] +"\n"
-    # store the ten closest products
+    # store the ten closest products into a dataframe Sim_Prods
     Sim_Prods = pd.DataFrame(numpy.ones((10, 2)), columns=['Id', 'Distance'])
     # fill the first ten distance values
     k = 0
@@ -204,25 +202,43 @@ for i in ind_:
     res = Sim_Prods.sort(['Distance'])
     Result[Products_GS_tc['Product-ID'].loc[i]] = res['Id'].tolist()
 
+
 # write results in a text file
-with open("Results_Similitude.txt", "a") as f_w:
+Res_DF = pd.DataFrame(columns = ['Type', 'Produit', 'Enseigne', 'Marque'])
+with open("Results_Similitude_2.txt", "a") as f_w:
     i = 0
     for key, value in Result.iteritems():
         Prod_GS_index = ProductsDB[ProductsDB['Product-ID']== int(key)].index
         f_w.write("Produit: " + ProductsDB['nom'].loc[Prod_GS_index].values[0] + "\n\n")
+        Res_DF.loc[i, 'Type'] = "Produit"
+        Res_DF.loc[i, 'Produit'] = ProductsDB['nom'].loc[Prod_GS_index].values[0]
+        Res_DF.loc[i, 'Enseigne'] = ProductsDB['enseigne'].loc[Prod_GS_index].values[0]
+        Res_DF.loc[i, 'Marque'] = ProductsDB['marque'].loc[Prod_GS_index].values[0]
+
         for id in value:
+            i += 1
             Simi_index = ProductsDB[ProductsDB['Product-ID']== int(id)].index
-            f_w.write("Match " + str(i) + ": " + ProductsDB['nom'].loc[Simi_index].values[0] + "\n")
+            f_w.write("Match " + str(i) + ": " + ProductsDB['nom'].loc[Simi_index].values[0] + '    ' + ProductsDB['enseigne'].loc[Simi_index].values[0] + "\n")
+            Res_DF.loc[i, 'Type'] = "Match"
+            Res_DF.loc[i, 'Produit'] = ProductsDB['nom'].loc[Simi_index].values[0]
+            Res_DF.loc[i, 'Enseigne'] = ProductsDB['enseigne'].loc[Simi_index].values[0]
+            Res_DF.loc[i, 'Marque'] = ProductsDB['marque'].loc[Simi_index].values[0]
+        i += 1
         f_w.write("\n")
 
+
+
+'''
         for n in range(9):
             GS = GS_reverse.iloc[GS_reverse.shape[0] - ((i+1)*9): GS_reverse.shape[0] - i*9]
             GS_rr = GS.reindex(index=GS.index[::-1])
-            f_w.write("GoldSt " + str(i) + ": " + GS_rr['nom'].loc[i*9 + n] + "\n")
+            f_w.write("GoldSt " + str(i) + ": " + GS_rr['nom'].loc[i*9 + n] + '     ' +GS_rr['enseigne'].loc[i*9 + n] +"\n")
         i += 1
         f_w.write("\n\n")
+        '''
 f_w.close()
 
+Res_DF.to_csv("Resultat_SimilarProducts.csv", sep='|', encoding="utf-8", header=True, columns = ['Type', 'Produit', 'Enseigne', 'Marque'])
 
 '''
 

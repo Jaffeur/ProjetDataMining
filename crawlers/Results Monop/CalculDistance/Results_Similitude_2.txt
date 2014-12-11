@@ -1,0 +1,300 @@
+Produit: PIZZA 4 FROMAGES AUCHAN
+
+Match 0: PIZZA 4 FROMAGES AUCHAN    Simply
+Match 0: Pizza aux 4 fromages    Auchan
+Match 0: Pizza aux 4 fromages    Monoprix
+Match 0: Pizza aux 4 fromages    Monoprix
+Match 0: Pizza 4 fromages    Auchan
+Match 0: Pizza aux 4 fromages    Monoprix
+Match 0: PIZZA l'EXTRA MOELLEUSE 4 FROMAGES AUCHAN    Simply
+Match 0: PIZZA JAMBON FROMAGES AUCHAN    Simply
+Match 0: La pizza 4 fromages    Auchan
+Match 0: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+GoldSt 0: LINGETTES BEBE A L'ALOE VERA POUCE     Simply
+GoldSt 0: ECO-RECHARGE LINGETTES  BIOLANE     Simply
+GoldSt 0: LINGETTES A L'EAU NETTOYANTE MIXA BEBE      Simply
+GoldSt 0: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce     Monoprix
+GoldSt 0: Lingettes ultra douces au lait de toilette, sans rincer     Monoprix
+GoldSt 0: Lingettes h2o     Monoprix
+GoldSt 0: Lingettes pour bebe     Auchan
+GoldSt 0: Lingettes epaisses lotionnees     Auchan
+GoldSt 0: Lingettes lait de toilette     Auchan
+
+
+Produit: EPINARDS BRANCHES A LA CREME AUCHAN
+
+Match 1: EPINARDS BRANCHES A LA CREME AUCHAN    Simply
+Match 1: EPINARDS HACHES A LA CREME AUCHAN    Simply
+Match 1: EPINARDS HACHES A LA CREME FRAICHE FINDUS    Simply
+Match 1: Epinards branches a la creme    Auchan
+Match 1: EPINARDS BRANCHES BIO AUCHAN    Simply
+Match 1: EPINARDS BRANCHES BIO AUCHAN    Simply
+Match 1: Epinards en branches a la creme fraiche    Auchan
+Match 1: POISSON A LA BORDELAISE AUCHAN    Simply
+Match 1: BEIGNETS A LA ROMAINE AUCHAN    Simply
+Match 1: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+GoldSt 1: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN     Simply
+GoldSt 1: PITCH PEPITES DE CHOCOLAT PASQUIER     Simply
+GoldSt 1: DOO WAP PEPITES DE CHOCOLAT HARRY'S     Simply
+GoldSt 1: Pains au lait aux pepites de chocolat     Monoprix
+GoldSt 1: Pains au lait aux pepites de chocolat au lait     Monoprix
+GoldSt 1: Brioches pepites chocolat     Monoprix
+GoldSt 1: Pains au lait aux pepites de chocolat     Auchan
+GoldSt 1: Pains au lait aux pepites de chocolat     Auchan
+GoldSt 1: Brioches aux pepites de chocolat     Auchan
+
+
+Produit: LINGETTES BEBE A L'ALOE VERA POUCE
+
+Match 2: LINGETTES BEBE A L'ALOE VERA POUCE    Simply
+Match 2: Lingettes bebe    Auchan
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 2: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 2: Lingettes sensitives a laloe vera pour les peaux sensibles    Monoprix
+Match 2: Lingettes sensitives a laloe vera pour les peaux sensibles    Monoprix
+Match 2: Lingettes pour bebe    Auchan
+Match 2: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+GoldSt 2: JUS D'ORANGE AVEC PULPE TROPICANA     Simply
+GoldSt 2: JUS D'ORANGE PULPISSIMO TROPICANA     Simply
+GoldSt 2: ORANGES PRESSEES ANDROS     Simply
+GoldSt 2: Pur jus doranges pressees avec pulpe, Pulpissimo     Monoprix
+GoldSt 2: Jus doranges pressees 100 pur jus     Monoprix
+GoldSt 2: Jus dorange 100 pur jus     Monoprix
+GoldSt 2: Jus d'orange avec pulpe     Auchan
+GoldSt 2: Pur jus d'orange avec pulpe     Auchan
+GoldSt 2: Pur jus d'orange avec pulpe     Auchan
+
+
+Produit: JUS D'ORANGE AVEC PULPE TROPICANA
+
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L    Simply
+Match 3: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L    Simply
+Match 3: PUR JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 3: JUS D'ORANGE SANS PULPE TROPICANA    Simply
+Match 3: JUS D'ORANGE SANS PULPE TROPICANA    Simply
+Match 3: JUS D'ORANGE PULPISSIMO TROPICANA    Simply
+Match 3: JUS D'ORANGE PULPISSIMO TROPICANA    Simply
+Match 3: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+GoldSt 3: EPINARDS BRANCHES A LA CREME AUCHAN     Simply
+GoldSt 3: EPINARDS HACHES A LA CREME AUCHAN     Simply
+GoldSt 3: EPINARDS HACHES A LA CREME FRAICHE FINDUS     Simply
+GoldSt 3: Epinards en branches, surgeles     Monoprix
+GoldSt 3: Epinards haches, la creme fraiche     Monoprix
+GoldSt 3: Epinards haches en portions     Monoprix
+GoldSt 3: Epinards en branches     Auchan
+GoldSt 3: Epinards haches     Auchan
+GoldSt 3: Epinards branches a la creme     Auchan
+
+
+Produit: RAVIOLI BOLOGNAISE AUCHAN
+
+Match 4: RAVIOLI BOLOGNAISE AUCHAN    Simply
+Match 4: RAVIOLI BOLOGNAISE ZAPETTI    Simply
+Match 4: RAVIOLI BOLOGNAISE ZAPETTI    Simply
+Match 4: SAUCE BOLOGNAISE AUCHAN    Simply
+Match 4: SAUCE BOLOGNAISE AUCHAN    Simply
+Match 4: RAVIOLI LEGUMES AUCHAN    Simply
+Match 4: RAVIOLI PUR BOEUF AUCHAN    Simply
+Match 4: RAVIOLI PUR BOEUF AUCHAN    Simply
+Match 4: LASAGNES BOLOGNAISE AUCHAN    Simply
+Match 4: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+GoldSt 4: RAVIOLI BOLOGNAISE AUCHAN     Simply
+GoldSt 4: RAVIOLI BOLOGNAISE ZAPETTI     Simply
+GoldSt 4: RAVIOLI BOLOGNAISE ZAPETTI     Simply
+GoldSt 4: Ravioli de boeuf a la bolognaise     Monoprix
+GoldSt 4: Ravioli pur boeuf, certifie AB     Monoprix
+GoldSt 4: Ravioli pur boeuf a la sauce italienne     Monoprix
+GoldSt 4: Raviolis au boeuf     Auchan
+GoldSt 4: Raviolis boeuf     Auchan
+GoldSt 4: Ravioli pur boeuf     Auchan
+
+
+Produit: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN
+
+Match 5: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN    Simply
+Match 5: PAIN AU LAIT AUCHAN    Simply
+Match 5: BISCUITS PETIT DEJEUNER PEPITES DE CHOCOLAT LAIT AUCHAN    Simply
+Match 5: DOO WAP PEPITES CHOCOLAT AU LAIT HARRY'S    Simply
+Match 5: PAIN CHOCOLAT AUCHAN    Simply
+Match 5: CHOCOLAT AU LAIT DEGUSTATION AUCHAN    Simply
+Match 5: BRIOCHES AUX PEPITES DE CHOCOLAT RIK&ROK;    Simply
+Match 5: PAIN AU LAIT PASQUIER    Simply
+Match 5: Pepites Chocolat au lait    Monoprix
+Match 5: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+GoldSt 5: PIZZA 4 FROMAGES AUCHAN     Simply
+GoldSt 5: DOLCE PIZZA 4 FORMAGGI SODEBO     Simply
+GoldSt 5: PIZZA FROMAGERE AUCHAN     Simply
+GoldSt 5: Pizza quatre fromages, cuite au feu de bois     Monoprix
+GoldSt 5: Pizza aux 4 fromages     Monoprix
+GoldSt 5: Pizza aux 4 fromages, emmental, edam, mozzarella et chevre     Monoprix
+GoldSt 5: La pizza 4 fromages     Auchan
+GoldSt 5: Pizza 4 fromages     Auchan
+GoldSt 5: Pizza aux 4 fromages     Auchan
+
+
+Produit: PIZZA 4 FROMAGES AUCHAN
+
+Match 1: PIZZA 4 FROMAGES AUCHAN    Simply
+Match 2: Pizza aux 4 fromages    Auchan
+Match 3: Pizza aux 4 fromages    Monoprix
+Match 4: Pizza aux 4 fromages    Monoprix
+Match 5: Pizza 4 fromages    Auchan
+Match 6: Pizza aux 4 fromages    Monoprix
+Match 7: PIZZA l'EXTRA MOELLEUSE 4 FROMAGES AUCHAN    Simply
+Match 8: PIZZA JAMBON FROMAGES AUCHAN    Simply
+Match 9: La pizza 4 fromages    Auchan
+Match 10: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: EPINARDS BRANCHES A LA CREME AUCHAN
+
+Match 12: EPINARDS BRANCHES A LA CREME AUCHAN    Simply
+Match 13: EPINARDS HACHES A LA CREME AUCHAN    Simply
+Match 14: EPINARDS HACHES A LA CREME FRAICHE FINDUS    Simply
+Match 15: Epinards branches a la creme    Auchan
+Match 16: EPINARDS BRANCHES BIO AUCHAN    Simply
+Match 17: EPINARDS BRANCHES BIO AUCHAN    Simply
+Match 18: Epinards en branches a la creme fraiche    Auchan
+Match 19: POISSON A LA BORDELAISE AUCHAN    Simply
+Match 20: BEIGNETS A LA ROMAINE AUCHAN    Simply
+Match 21: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: LINGETTES BEBE A L'ALOE VERA POUCE
+
+Match 23: LINGETTES BEBE A L'ALOE VERA POUCE    Simply
+Match 24: Lingettes bebe    Auchan
+Match 25: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 26: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 27: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 28: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 29: Lingettes sensitives a laloe vera pour les peaux sensibles    Monoprix
+Match 30: Lingettes sensitives a laloe vera pour les peaux sensibles    Monoprix
+Match 31: Lingettes pour bebe    Auchan
+Match 32: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: JUS D'ORANGE AVEC PULPE TROPICANA
+
+Match 34: JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 35: JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 36: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L    Simply
+Match 37: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L    Simply
+Match 38: PUR JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 39: JUS D'ORANGE SANS PULPE TROPICANA    Simply
+Match 40: JUS D'ORANGE SANS PULPE TROPICANA    Simply
+Match 41: JUS D'ORANGE PULPISSIMO TROPICANA    Simply
+Match 42: JUS D'ORANGE PULPISSIMO TROPICANA    Simply
+Match 43: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: RAVIOLI BOLOGNAISE AUCHAN
+
+Match 45: RAVIOLI BOLOGNAISE AUCHAN    Simply
+Match 46: RAVIOLI BOLOGNAISE ZAPETTI    Simply
+Match 47: RAVIOLI BOLOGNAISE ZAPETTI    Simply
+Match 48: SAUCE BOLOGNAISE AUCHAN    Simply
+Match 49: SAUCE BOLOGNAISE AUCHAN    Simply
+Match 50: RAVIOLI LEGUMES AUCHAN    Simply
+Match 51: RAVIOLI PUR BOEUF AUCHAN    Simply
+Match 52: RAVIOLI PUR BOEUF AUCHAN    Simply
+Match 53: LASAGNES BOLOGNAISE AUCHAN    Simply
+Match 54: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN
+
+Match 56: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN    Simply
+Match 57: PAIN AU LAIT AUCHAN    Simply
+Match 58: BISCUITS PETIT DEJEUNER PEPITES DE CHOCOLAT LAIT AUCHAN    Simply
+Match 59: DOO WAP PEPITES CHOCOLAT AU LAIT HARRY'S    Simply
+Match 60: PAIN CHOCOLAT AUCHAN    Simply
+Match 61: CHOCOLAT AU LAIT DEGUSTATION AUCHAN    Simply
+Match 62: BRIOCHES AUX PEPITES DE CHOCOLAT RIK&ROK;    Simply
+Match 63: PAIN AU LAIT PASQUIER    Simply
+Match 64: Pepites Chocolat au lait    Monoprix
+Match 65: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: PIZZA 4 FROMAGES AUCHAN
+
+Match 1: PIZZA 4 FROMAGES AUCHAN    Simply
+Match 2: Pizza aux 4 fromages    Auchan
+Match 3: Pizza aux 4 fromages    Monoprix
+Match 4: Pizza aux 4 fromages    Monoprix
+Match 5: Pizza 4 fromages    Auchan
+Match 6: Pizza aux 4 fromages    Monoprix
+Match 7: PIZZA l'EXTRA MOELLEUSE 4 FROMAGES AUCHAN    Simply
+Match 8: PIZZA JAMBON FROMAGES AUCHAN    Simply
+Match 9: La pizza 4 fromages    Auchan
+Match 10: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: EPINARDS BRANCHES A LA CREME AUCHAN
+
+Match 12: EPINARDS BRANCHES A LA CREME AUCHAN    Simply
+Match 13: EPINARDS HACHES A LA CREME AUCHAN    Simply
+Match 14: EPINARDS HACHES A LA CREME FRAICHE FINDUS    Simply
+Match 15: Epinards branches a la creme    Auchan
+Match 16: EPINARDS BRANCHES BIO AUCHAN    Simply
+Match 17: EPINARDS BRANCHES BIO AUCHAN    Simply
+Match 18: Epinards en branches a la creme fraiche    Auchan
+Match 19: POISSON A LA BORDELAISE AUCHAN    Simply
+Match 20: BEIGNETS A LA ROMAINE AUCHAN    Simply
+Match 21: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: LINGETTES BEBE A L'ALOE VERA POUCE
+
+Match 23: LINGETTES BEBE A L'ALOE VERA POUCE    Simply
+Match 24: Lingettes bebe    Auchan
+Match 25: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 26: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 27: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 28: Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera et a lextrait damande douce    Monoprix
+Match 29: Lingettes sensitives a laloe vera pour les peaux sensibles    Monoprix
+Match 30: Lingettes sensitives a laloe vera pour les peaux sensibles    Monoprix
+Match 31: Lingettes pour bebe    Auchan
+Match 32: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: JUS D'ORANGE AVEC PULPE TROPICANA
+
+Match 34: JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 35: JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 36: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L    Simply
+Match 37: JUS D'ORANGE AVEC PULPE TROPICANA 1,75L    Simply
+Match 38: PUR JUS D'ORANGE AVEC PULPE TROPICANA    Simply
+Match 39: JUS D'ORANGE SANS PULPE TROPICANA    Simply
+Match 40: JUS D'ORANGE SANS PULPE TROPICANA    Simply
+Match 41: JUS D'ORANGE PULPISSIMO TROPICANA    Simply
+Match 42: JUS D'ORANGE PULPISSIMO TROPICANA    Simply
+Match 43: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: RAVIOLI BOLOGNAISE AUCHAN
+
+Match 45: RAVIOLI BOLOGNAISE AUCHAN    Simply
+Match 46: RAVIOLI BOLOGNAISE ZAPETTI    Simply
+Match 47: RAVIOLI BOLOGNAISE ZAPETTI    Simply
+Match 48: SAUCE BOLOGNAISE AUCHAN    Simply
+Match 49: SAUCE BOLOGNAISE AUCHAN    Simply
+Match 50: RAVIOLI LEGUMES AUCHAN    Simply
+Match 51: RAVIOLI PUR BOEUF AUCHAN    Simply
+Match 52: RAVIOLI PUR BOEUF AUCHAN    Simply
+Match 53: LASAGNES BOLOGNAISE AUCHAN    Simply
+Match 54: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
+Produit: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN
+
+Match 56: PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN    Simply
+Match 57: PAIN AU LAIT AUCHAN    Simply
+Match 58: BISCUITS PETIT DEJEUNER PEPITES DE CHOCOLAT LAIT AUCHAN    Simply
+Match 59: DOO WAP PEPITES CHOCOLAT AU LAIT HARRY'S    Simply
+Match 60: PAIN CHOCOLAT AUCHAN    Simply
+Match 61: CHOCOLAT AU LAIT DEGUSTATION AUCHAN    Simply
+Match 62: BRIOCHES AUX PEPITES DE CHOCOLAT RIK&ROK;    Simply
+Match 63: PAIN AU LAIT PASQUIER    Simply
+Match 64: Pepites Chocolat au lait    Monoprix
+Match 65: AMPOULE  ECOCLASSIC 53W B22 LX 2    Simply
+
