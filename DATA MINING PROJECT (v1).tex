@@ -91,6 +91,7 @@
     \def\lt{<}
     % Document parameters
     \title{DATA MINING PROJECT}
+    \author{Pierre Arbelet, Arthur Dupont, Anthony Hayot}
     
     
     
@@ -228,20 +229,24 @@
 
     The product offer of supermarkets is large and complex and it can be
 very challenging for consumers to navigate into it. This complexity is
-an obstacle for conducting basic actions such as: - comparing price
-between supermarkets - find similar products in order to reach a
-specific budget - switch products to match a specific behaviour
-(organic, hallal, gluten-free\ldots{})
+an obstacle for conducting basic actions such as: 
+\begin{itemize}
+\item comparing price between supermarkets 
+\item find similar products in order to reach a specific budget 
+\item switch products to match a specific behaviour (organic, hallal, gluten-free\ldots{})
+\end{itemize}
 
 The objective of this project is to provide consumers with a navigation
-tool that will his shopping easier more efficient and powerful.
+tool that will transform his shopping experience and make it efficient and powerful.
+\\
 
-The following steps have been followed: - Step 1: Crawl product
-inventories from online supermarkets - Step 2: Data cleaning (avoid
-redundancy, completion, formating) - Step 3: Build Distance Functions
-between products to allow efficient substitutions - Step 4: Find the
-best candidate for a given shopping cart
-
+The following steps have been followed: 
+\begin{itemize}
+\item Step 1: Crawl product inventories from online supermarkets 
+\item Step 2: Data cleaning (avoid redundancy, completion, formating) 
+\item Step 3: Build Distance Functions between products to allow efficient substitutions 
+\item Step 4: Find the best candidate for a given shopping cart
+\end{itemize}
 
     \section{Crawling inventories}
 
@@ -249,17 +254,19 @@ best candidate for a given shopping cart
     For this project, we have focused our efforts on 3 online supermakets:
 Auchan, Monoprix and Simply. But the approach that we will detail below
 can be easily applied to any supermarket website, as they all share a
-similar architecture: - a welcome page with links to different
-categories (beverage, meat, fruit\ldots{}) - inside each category, you
-will have different level a sub-categories (alcohol, juice,
-soda\ldots{}) - after a couple of categorization levels (usually between
-1 and 5), you reach the product offer - by clicking on each product, you
-reach a ``product page'' where detailed information (description,
-energetic values, price\ldots{}) is displayed
+similar architecture: 
+\begin{itemize}
+\item  a welcome page with links to different categories (beverage, meat, fruit\ldots{}) 
+\item inside each category, you will have different level a sub-categories (alcohol, juice, soda\ldots{}) 
+\item after a couple of categorization levels (usually between 1 and 5), you reach the product offer
+\item by clicking on each product, you reach a ``product page'' where detailed information (description, energetic values, price\ldots{}) is displayed
+\end{itemize}
 
-Our crawlers are built in two steps: - navigate through the categories
-to collect ``product page'' urls - extract relevant information for each
-``product page''
+Our crawlers are built in two steps: 
+\begin{itemize}
+\item navigate through the categories to collect ``product page'' urls 
+\item extract relevant information for each ``product page''
+\end{itemize}
 
 The Python code for the first step is described below:
 
@@ -333,9 +340,9 @@ of each ``product page'' that contains the following fields:
     Once the html code containing these data has been scrapped, it needs to
 be parsed and cleaned in order to fill the table with the correct
 values. Ideally, we would have stored the code in a text database, such
-as MongoDB, and then build a parser to transfer information from MongDB
+as MongoDB, and then build a parser to transfer information from MongoDB
 to a standard relationnal database. For this project, we have scrapped
-and clean the data at the same time and build a csv file gathering the
+and cleaned the data at the same time and built a csv file gathering the
 data.
 
 First, the parsing/cleaning stage consists in understanding the
@@ -422,10 +429,76 @@ build a clean dataset available for analysis.
 
     \section{Distance between products}
 
+Now that we have a clean dataset, we need to build a distance function between products in order to find, for each product, the most similar items in our inventory.
+To build this distance function, we started with distance between identical fields. This could be very simple for numeric fields such as weight/volume but is more complex for Strings. We will focus on String distance for this project.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}}]:} 
-\end{Verbatim}
+ 		\subsection{Jaccard Distance}
+The naive of performing distance between sets of Strings is by using Jaccard Distance defined by:
+\\
+\\
+Jaccard Distance = $ \frac {card(A\cup B) - card(A \cap B)}{card(A \cup B)} $
+\\
+\\
+where $ card(A\cup B) $ represents the number of distinct words in String A and B
+\\
+and $ card(A \cap B) $ represents the number of common words in String A and B.
+\\
+\\
+In Python, it translates as below:
+
+code Jaccard
+
+
+
+This method gives us a first hint of the distance between our two strings but has two weaknesses:
+\begin{itemize}
+\item irrelevant words (article, punctuations...) should not be counted
+\item variations on the same word (singular/plural, conjugation) should be counted as common words
+\end{itemize}
+
+	\subsection{Stopwords}
+Those irrelevant words are known as "Stopwords" and should be removed before performing the Jaccard Distance.
+To do so, we use a list of French Stopwords from https://code.google.com/p/stop-words/.
+We search for every words of A in the list. If it is in the list, the word is removed.
+\\
+For example, the sentence:
+\\
+\textit{taboule oriental - salade de semoule de ble dur, aux legumes, aux raisins secs et a la menthe}
+\\
+becomes:
+\\
+\textit{taboule oriental salade semoule ble dur legumes raisins secs menthe}
+\\
+In Python, we have:
+
+code Stopwords
+
+
+	\subsection{Lemmatization}
+
+The idea here is to be able to count as common words with the same root (eg chocolat, chocolats et chocolatée). To do so, we extract the root using FrenchStemmer  from nltk.stem.snowball library. We, then, replace the word by its root.
+\\
+Our example becomes:
+\\
+\textit{taboule orient salade semoule ble dur legume raisin sec menthe}
+\\
+\\
+By removing Stopwords and lemmatizing, we get a significant improvement that we will present in the next sections.
+
+ 
+\section{Results}
+To analyse the performance of our algorithm, we have manually define a "Gold Standard".
+We chose 6 initial products from the Simply inventory but in different product category.
+\\
+ For each product, we picked:
+\begin{itemize} 
+\item the 2 most similar products at Simply
+\item the 3 most similar products at Monoprix
+\item the 3 most similar products at Auchan
+\end{itemize}
+
+By running the algorithm on the initial products, we can see if it performs as expected.
+
 
 
     % Add a bibliography block to the postdoc

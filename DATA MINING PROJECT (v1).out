@@ -2,3 +2,7 @@
 \BOOKMARK [1][-]{section.2}{Crawling inventories}{}
 \BOOKMARK [1][-]{section.3}{Data Cleaning}{}
 \BOOKMARK [1][-]{section.4}{Distance between products}{}
+\BOOKMARK [2][-]{subsection.4.1}{Jaccard Distance}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Stopwords}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Lemmatization}{section.4}
+\BOOKMARK [1][-]{section.5}{Results}{}
