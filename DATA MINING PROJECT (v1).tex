@@ -232,12 +232,11 @@ very challenging for consumers to navigate into it. This complexity is
 an obstacle for conducting basic actions such as: 
 \begin{itemize}
 \item comparing price between supermarkets 
-\item find similar products in order to reach a specific budget 
+\item replace products to fit in a specific budget 
 \item switch products to match a specific behaviour (organic, hallal, gluten-free\ldots{})
 \end{itemize}
 
-The objective of this project is to provide consumers with a navigation
-tool that will transform his shopping experience and make it efficient and powerful.
+The objective of this project is to provide the first brick, which is a similarity metric between products, of an efficient shopping experience.
 \\
 
 The following steps have been followed: 
@@ -245,7 +244,7 @@ The following steps have been followed:
 \item Step 1: Crawl product inventories from online supermarkets 
 \item Step 2: Data cleaning (avoid redundancy, completion, formating) 
 \item Step 3: Build Distance Functions between products to allow efficient substitutions 
-\item Step 4: Find the best candidate for a given shopping cart
+
 \end{itemize}
 
     \section{Crawling inventories}
@@ -257,9 +256,9 @@ can be easily applied to any supermarket website, as they all share a
 similar architecture: 
 \begin{itemize}
 \item  a welcome page with links to different categories (beverage, meat, fruit\ldots{}) 
-\item inside each category, you will have different level a sub-categories (alcohol, juice, soda\ldots{}) 
-\item after a couple of categorization levels (usually between 1 and 5), you reach the product offer
-\item by clicking on each product, you reach a ``product page'' where detailed information (description, energetic values, price\ldots{}) is displayed
+\item inside each category, different levels of sub-categories (alcohol, wine, red wine) 
+\item after a couple of categorization levels (usually between 1 and 5), a list of products
+\item by clicking on each product, ``product pages '' where detailed information (description, energetic values, price\ldots{}) is displayed
 \end{itemize}
 
 Our crawlers are built in two steps: 
@@ -314,8 +313,9 @@ The Python code for the first step is described below:
 new category is discovered. At the end, the variable productLink is a
 list that contains all the ``product page'' urls and we can move to the
 second step.
-
-The second step consist in scrapping the relevant part of the html code
+\\
+\\
+The second step consists in scrapping the relevant part of the html code
 of each ``product page'' that contains the following fields: 
 \begin{itemize}
 \item product\_name
@@ -342,9 +342,8 @@ be parsed and cleaned in order to fill the table with the correct
 values. Ideally, we would have stored the code in a text database, such
 as MongoDB, and then build a parser to transfer information from MongoDB
 to a standard relationnal database. For this project, we have scrapped
-and cleaned the data at the same time and built a csv file gathering the
-data.
-
+and cleaned the data at the same time and built a csv file to store it.
+\\ 
 First, the parsing/cleaning stage consists in understanding the
 structure of the html code. For example:
 
@@ -430,10 +429,10 @@ build a clean dataset available for analysis.
     \section{Distance between products}
 
 Now that we have a clean dataset, we need to build a distance function between products in order to find, for each product, the most similar items in our inventory.
-To build this distance function, we started with distance between identical fields. This could be very simple for numeric fields such as weight/volume but is more complex for Strings. We will focus on String distance for this project.
+To build this distance function, we started with distance between identical fields. This could be very simple for numeric fields such as weight/volume but is more complex for Strings. We will focus on distance between Strings for this project.
 
  		\subsection{Jaccard Distance}
-The naive of performing distance between sets of Strings is by using Jaccard Distance defined by:
+Our first call for performing distance between sets of Strings is by using Jaccard Distance defined by:
 \\
 \\
 Jaccard Distance = $ \frac {card(A\cup B) - card(A \cap B)}{card(A \cup B)} $
@@ -455,7 +454,7 @@ In Python, it translates as below:
                \PY{k}{return} \PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{str1} \PY{o}{\PYZam{}} \PY{n}{str2}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n+nb}{len}\PY{p}{(}\PY{n}{str1} \PY{o}{|} \PY{n}{str2}\PY{p}{)}
            \PY{k}{else}\PY{p}{:}
                \PY{k}{return} \PY{n}{numpy}\PY{o}{.}\PY{n}{nan}
-\end{Verbatim}
+\end{Verbatim} 
 
 
 
@@ -473,11 +472,11 @@ We search for every words of A in the list. If it is in the list, the word is re
 \\
 For example, the sentence:
 \\
-\textit{taboule oriental - salade de semoule de ble dur, aux legumes, aux raisins secs et a la menthe}
+\textit{Assortiment de chocolats au lait fourres et de biscuits enrobes de chocolat au lait.}
 \\
 becomes:
 \\
-\textit{taboule oriental salade semoule ble dur legumes raisins secs menthe}
+\textit{assortiment chocolats lait fourres biscuits enrobes chocolat lait}
 \\
 In Python, we have:
 
@@ -509,11 +508,11 @@ In Python, we have:
 
 	\subsection{Lemmatization}
 
-The idea here is to be able to count as common words with the same root (eg chocolat, chocolats et chocolatée). To do so, we extract the root using FrenchStemmer  from nltk.stem.snowball library. We, then, replace the word by its root.
+The idea here is to be able to count words with the same root (eg chocolat, chocolats et chocolatée) as common words. To do so, we extract the root using FrenchStemmer  from nltk.stem.snowball library. We, then, replace the word by its root.
 \\
 Our example becomes:
 \\
-\textit{taboule orient salade semoule ble dur legume raisin sec menthe}
+\textit{assorti chocolat lait fourr biscuit enrob chocolat lait}
 \\
 \\
 By removing Stopwords and lemmatizing, we get a significant improvement that we will present in the next sections.
@@ -521,7 +520,7 @@ By removing Stopwords and lemmatizing, we get a significant improvement that we 
  
 \section{Results}
 To analyse the performance of our algorithm, we have manually define a "Gold Standard".
-We chose 6 initial products from the Simply inventory but in different product category.
+We chose 6 initial products from the Simply inventory but in different product categories.
 \\
  For each product, we picked:
 \begin{itemize} 
@@ -530,15 +529,170 @@ We chose 6 initial products from the Simply inventory but in different product c
 \item the 3 most similar products at Auchan
 \end{itemize}
 
-By running the algorithm on the initial products, we can see if it performs as expected.
-
+We call GoldStandard i the ensemble gathering the initial product i and its 8 similar products.
+ 
+First, we compute the distance between each product of our Gold Standard for the fields "nom", " ingredient" and "description". 
+The results are displayed below:
 \begin{figure}[!h]
-\includegraphics[width=15cm]{/Users/pierre/Documents/Telecom ParisTech/MS_Big_Data/ProjetDataMining/crawlers/Results Monop/CalculDistance/results_images/MatDist_nom_1/Diapositive1.png}
+\includegraphics[width=20cm]{/home/anthony/Documents/ProjetDataMining/crawlers/Results Monop/CalculDistance/results_images/MatDist_nom_1/Diapositive1.png}
 \end{figure}
+\\
+\\
 
+We can observe that our distance behaves well on that field. Inside a Gold Standard, the distance is very small between products. Outside, the distance is almost maximum.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+On the field "ingredient", the results are less obvious. For some products, it seems to work fine while for some others, ingredients are less discriminant.
+\begin{figure}[!h]
+\includegraphics[width=20cm]{/home/anthony/Documents/ProjetDataMining/crawlers/Results Monop/CalculDistance/results_images/MatDist_ingredients_1/Diapositive1.png}
+\end{figure}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+For the field "descriptif", it seems that it performs well inside a supermarket (3 products) because it uses a an homogeneous language but makes it less performant to compare products from different supermarkets.
+\begin{figure}[!h]
+\includegraphics[width=20cm]{/home/anthony/Documents/ProjetDataMining/crawlers/Results Monop/CalculDistance/results_images/MatDist_descriptif_1/Diapositive1.png}
+\end{figure}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+Based on these results, we empirically chose the following weights :
+\begin{itemize}
+\item nom: 0,6
+\item ingredient: 0,2
+\item description: 0,2
+\end{itemize}
 
-    % Add a bibliography block to the postdoc
-    
+Remark :
+\\
+we computed the tf-idf on the ingredient field to select the 10 most important words in that field: the results were encouraging (see code in SimilarProducts.py).
+
+We have then tested our algorithm (data normalization and weighted average of Jaccard distance) on the whole database for the 6 initial products. We obtained the results in Appendix. We will next compute a score comparing these results with the gold rule.
+
+In order not to store the whole distance matrix (memory efficiency), we first store the 10 first distances and then, for each distance computed, if it is lower than the maximum distance in the list, we replace the maximum by this value.
+
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{llll}
+    \toprule
+    Type  & Produit & Enseigne & Marque \\
+    \midrule
+    Produit & PIZZA 4 FROMAGES AUCHAN & Simply & AUCHAN \\
+    Match & PIZZA 4 FROMAGES AUCHAN & Simply & AUCHAN \\
+    Match & Pizza aux 4 fromages & Auchan & BUITONI \\
+    Match & Pizza aux 4 fromages & Monoprix & Dr Oetker  \\
+    Match & Pizza aux 4 fromages & Monoprix & Sodebo Dolce  \\
+    Match & Pizza 4 fromages & Auchan & AUCHAN \\
+    Match & Pizza aux 4 fromages & Monoprix & Sodebo Presto \\
+    Match & PIZZA l'EXTRA MOELLEUSE 4 FROMAGES AUCHAN & Simply & AUCHAN \\
+    Match & PIZZA JAMBON FROMAGES AUCHAN & Simply & AUCHAN \\
+    Match & La pizza 4 fromages & Auchan & SODEBO \\
+          &       &       &  \\
+    Produit & EPINARDS BRANCHES A LA CREME AUCHAN & Simply & AUCHAN \\
+    Match & EPINARDS BRANCHES A LA CREME AUCHAN & Simply & AUCHAN \\
+    Match & EPINARDS HACHES A LA CREME AUCHAN & Simply & AUCHAN \\
+    Match & EPINARDS HACHES A LA CREME FRAICHE FINDUS & Simply & Findus \\
+    Match & Epinards branches a la creme & Auchan & AUCHAN \\
+    Match & EPINARDS BRANCHES BIO AUCHAN & Simply & AUCHAN \\
+    Match & EPINARDS BRANCHES BIO AUCHAN & Simply & AUCHAN \\
+    Match & Epinards en branches a la creme fraiche & Auchan & FINDUS \\
+    Match & POISSON A LA BORDELAISE AUCHAN & Simply & AUCHAN \\
+    Match & BEIGNETS A LA ROMAINE AUCHAN & Simply & AUCHAN \\
+          &       &       &  \\
+    Produit & LINGETTES BEBE A L'ALOE VERA POUCE & Simply & POUCE \\
+    Match & LINGETTES BEBE A L'ALOE VERA POUCE & Simply & POUCE \\
+    Match & Lingettes bebe & Auchan & POUCE \\
+    Match & Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera  & Monoprix & BoutChou \\
+    Match & Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera  & Monoprix & BoutChou \\
+    Match & Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera  & Monoprix & BoutChou \\
+    Match & Lingettes epaisses sans alcool pour bebe a leau nettoyante, a laloe vera  & Monoprix & BoutChou \\
+    Match & Lingettes sensitives a laloe vera pour les peaux sensibles & Monoprix & BoutChou \\
+    Match & Lingettes sensitives a laloe vera pour les peaux sensibles & Monoprix & BoutChou \\
+    Match & Lingettes pour bebe & Auchan & PAMPERS \\
+          &       &       &  \\
+    Produit & JUS D'ORANGE AVEC PULPE TROPICANA & Simply & Tropicana \\
+    Match & JUS D'ORANGE AVEC PULPE TROPICANA & Simply & Tropicana \\
+    Match & JUS D'ORANGE AVEC PULPE TROPICANA & Simply & Tropicana \\
+    Match & JUS D'ORANGE AVEC PULPE TROPICANA 1,75L & Simply & Tropicana \\
+    Match & JUS D'ORANGE AVEC PULPE TROPICANA 1,75L & Simply & Tropicana \\
+    Match & PUR JUS D'ORANGE AVEC PULPE TROPICANA & Simply & TROPICANA \\
+    Match & JUS D'ORANGE SANS PULPE TROPICANA & Simply & Tropicana \\
+    Match & JUS D'ORANGE SANS PULPE TROPICANA & Simply & Tropicana \\
+    Match & JUS D'ORANGE PULPISSIMO TROPICANA & Simply & Tropicana \\
+    Match & JUS D'ORANGE PULPISSIMO TROPICANA & Simply & Tropicana \\
+          &       &       &  \\
+    Produit & RAVIOLI BOLOGNAISE AUCHAN & Simply & AUCHAN \\
+    Match & RAVIOLI BOLOGNAISE AUCHAN & Simply & AUCHAN \\
+    Match & RAVIOLI BOLOGNAISE ZAPETTI & Simply & ZAPETTI \\
+    Match & RAVIOLI BOLOGNAISE ZAPETTI & Simply & ZAPETTI \\
+    Match & SAUCE BOLOGNAISE AUCHAN & Simply & AUCHAN \\
+    Match & SAUCE BOLOGNAISE AUCHAN & Simply & AUCHAN \\
+    Match & RAVIOLI LEGUMES AUCHAN & Simply & AUCHAN \\
+    Match & RAVIOLI PUR BOEUF AUCHAN & Simply & AUCHAN \\
+    Match & RAVIOLI PUR BOEUF AUCHAN & Simply & AUCHAN \\
+    Match & LASAGNES BOLOGNAISE AUCHAN & Simply & AUCHAN \\
+          &       &       &  \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{llll}
+    \toprule
+    Type  & Produit & Enseigne & Marque \\
+    \midrule
+    Produit & PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN & Simply & AUCHAN \\
+    Match & PAIN AU LAIT AUX PEPITES DE CHOCOLAT AUCHAN & Simply & AUCHAN \\
+    Match & PAIN AU LAIT AUCHAN & Simply & AUCHAN \\
+    Match & BISCUITS PETIT DEJEUNER PEPITES DE CHOCOLAT LAIT AUCHAN & Simply & AUCHAN \\
+    Match & DOO WAP PEPITES CHOCOLAT AU LAIT HARRY'S & Simply & HARRY'S \\
+    Match & PAIN CHOCOLAT AUCHAN & Simply & AUCHAN \\
+    Match & CHOCOLAT AU LAIT DEGUSTATION AUCHAN & Simply & AUCHAN \\
+    Match & BRIOCHES AUX PEPITES DE CHOCOLAT RIK\&ROK; & Simply & RIK\&ROK; \\
+    Match & PAIN AU LAIT PASQUIER & Simply & Pasquier \\
+    Match & Pepites Chocolat au lait & Monoprix & Vahine \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+   
+
+\section{Conclusion}
+This project was a very rich experience for us. We went through the different phases and had to find our way through technical difficulties especially in the crawling phase. Our first results seem encouraging and can consitute the first brick of a bigger project. The distance function can be improved by using more powerful semantic tools (LSA, LDA). We can also imagine to feed our algorithm with true shopper experiences in order to personnalize the substitution relevancy.    
     
     
     \end{document}
+
